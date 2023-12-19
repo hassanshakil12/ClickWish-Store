@@ -1,0 +1,107 @@
+form{
+    background-color: crimson;
+    width: 32em;
+    height: 50em;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    padding-bottom: 120px;
+}
+
+form h1{
+    font-size: 70px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+form .gndr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form .gndr input{
+    width: 20px;
+}
+
+form .gndr .male{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form .gndr .female{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form .terms{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: -20px;
+}
+
+form .terms input{
+    width: 20px;
+}
+
+form .btn{
+    background-color: black;
+    color: white;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+form .btn:hover{
+    background-color: rgb(0, 150, 50);
+}
+
+form p{
+    font-size: 20px;
+}
+
+form p{
+    font-size: 20px;
+}
+
+form a{
+    text-decoration: none;
+    color: rgb(0, 0, 164);
+    transition: all ease 0.3s;
+}
+
+form a:hover{
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 500px){
+    form{
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
