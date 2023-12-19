@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="navbar.css">
 <div class="navbar">
     <div class="left">
         <h1>Logo</h1>
