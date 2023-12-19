@@ -89,8 +89,16 @@
   border: 1px solid black;
 }
 
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+
 .navbar .right .signUpBtn {
   background-color: black;
+}
+
+.navbar .right .signUpBtn a {
   color: crimson;
 }
 
