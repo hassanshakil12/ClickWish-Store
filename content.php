@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="content.css">
 <div class="content" id="cont">
     <div class="imageSlider">
         <div class="mySlides slide01">
