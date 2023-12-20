@@ -187,3 +187,69 @@
   font-size: 18px;
   font-weight: 400;
 }
+
+@media (max-width: 768px) {
+  .navbar .center,
+  .navbar .right {
+    display: none;
+  }
+  
+  .navbar .menuLogo {
+    display: block;
+    gap: 5vw;
+    width: auto;
+  }
+
+  .navbar .searchField{
+    top: 0;
+    opacity: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .searchField input{
+    opacity: 0.8;
+  }
+
+  .main .sideMenu{
+    width: 45vw;
+  }
+
+  .main .sideMenu .shopMenu{
+    padding: 2vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar .center {
+    display: none;
+  }
+
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .menuLogo {
+    display: block;
+  }
+
+  .navbar .searchField {
+    top: auto;
+    opacity: 1;
+  }
+  .main .dropdown {
+    display: none;
+    width: 100vw;
+  }
+
+  .main .sideMenu{
+    width: 55vw;
+  }
+}
+
+@media (max-width: 375px){
+  .navbar .searchField{
+    display: none;
+  }
+}

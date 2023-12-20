@@ -148,8 +148,3 @@ body {
   }
 }
 
-@media (max-width: 375px){
-  .navbar .searchField{
-    display: none;
-  }
-}
