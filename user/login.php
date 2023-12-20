@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php include("C:/xampp/htdocs/ClickWish Store/navbar.php"); ?>
     <div class="main">
         <form action="" method="post">
             <h1>LOGIN</h1>

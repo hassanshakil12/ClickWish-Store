@@ -2,6 +2,7 @@
   position: relative;
   height: calc(100vh - 9vh);
   transition: all ease 0.3s;
+  min-height: 100vh;
 }
 
 /* Image Slider */
@@ -350,6 +351,7 @@ footer .bottom{
   width: 100vw;
   height: 10%;
   color: #a1a1a1;
+  flex-wrap: wrap;
 }
 
 footer .bottom h4{
@@ -435,11 +437,6 @@ footer .bottom a{
   .textContent button{
     font-size: 3vw;
     padding: 1.5vh 5vw;
-  }
-
-  footer .bottom h4{
-    letter-spacing: 0;
-    font-size: 12px;
   }
 }
 
