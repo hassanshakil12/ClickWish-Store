@@ -7,6 +7,7 @@
     <title>User Registration</title>
     <link rel="stylesheet" href="userStyle.css">
     <link rel="stylesheet" href="signup.css">
+    
 </head>
 
 <body>
