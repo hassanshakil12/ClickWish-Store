@@ -207,7 +207,7 @@
   width: 50%;
   position: relative;
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -259,7 +259,7 @@
 footer{
   background-color: crimson;
   width: 100vw;
-  height: 50vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -268,14 +268,16 @@ footer{
 }
 
 footer .top{
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: crimson;
   width: 100vw;
-  height: 90%;
+  min-height: 90%;
   padding: 4vw;
+  overflow: hidden;
 }
 
 footer .top a{
@@ -339,6 +341,7 @@ footer .top .center i:hover{
 }
 
 footer .bottom{
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -360,8 +363,54 @@ footer .bottom a{
   text-decoration: none;
 }
 
+@media (max-width: 1610px){
+  .aboutUs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .aboutUs .details{
+    flex-direction: column;
+  }
+
+  .details .image{
+    width: 80%;
+  }
+
+  .details p{
+    width: 80%;
+  }
+}
+
 @media (max-width: 992px){
-  footer{
+  footer .top{
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  footer .top .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer .top .center{
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  footer .top .center .links{
+    margin-top: 0;
+  }
+
+  footer .top .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
   }
 }
@@ -387,6 +436,11 @@ footer .bottom a{
     font-size: 3vw;
     padding: 1.5vh 5vw;
   }
+
+  footer .bottom h4{
+    letter-spacing: 0;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -404,5 +458,11 @@ footer .bottom a{
 
   .textContent button{
     font-size: 4.8vw;
+  }
+
+  footer .top .center{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 }
