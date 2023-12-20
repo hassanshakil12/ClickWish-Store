@@ -255,3 +255,44 @@
   text-align: justify;
   cursor: default;
 }
+
+@media (max-width: 768px) {
+.slide01 .textContent{
+    width: 100%;
+    top: 15vh;
+  }
+
+  .textContent h2{
+    font-size: 12.5vw;
+    width: 100%;
+  }
+
+  .textContent p{
+    font-size: 3vw;
+    width: 100%;
+    margin: 2vh 0;
+  }
+
+  .textContent button{
+    font-size: 3vw;
+    padding: 1.5vh 5vw;
+  }
+}
+
+@media (max-width: 500px) {
+.slide01 .textContent{
+    width: 100%;
+  }
+
+  .textContent h2{
+    font-size: 16vw;
+  }
+
+  .textContent p{
+    font-size: 4.8vw;
+  }
+
+  .textContent button{
+    font-size: 4.8vw;
+  }
+}
