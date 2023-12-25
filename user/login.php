@@ -29,9 +29,9 @@
             $data = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($data) > 0) {
-                echo "<script>alert('login Successfull')</script>";
+                echo "<script>alert('login Successfull :)')</script>";
             } else {
-                echo "<script>alert('login failed')</script>";
+                echo "<script>alert('login Failed ;(')</script>";
             }
         }
         ?>

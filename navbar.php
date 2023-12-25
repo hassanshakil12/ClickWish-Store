@@ -21,6 +21,10 @@
         <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
         <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
     </div>
+    <!-- <div class="right">
+        <h4>Username</h4>
+        <div class="pfp"><i class="ri-user-line"></i></div>
+    </div> -->
 </div>
 
 <div class="sideMenu">
