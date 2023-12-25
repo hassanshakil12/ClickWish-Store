@@ -25,7 +25,7 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $query = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password';";
+            $query = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
             $data = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($data) > 0) {
@@ -35,7 +35,7 @@
             }
         }
         ?>
-        <form action="page.php" method="post">
+        <form action="" method="post">
             <h1>LOGIN</h1>
             <input type="email" class="textBox" name="email" placeholder="Enter Email" required>
             <input type="password" class="textBox" name="password" placeholder="Enter password" required>

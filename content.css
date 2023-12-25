@@ -259,11 +259,11 @@
 footer{
   background-color: crimson;
   width: 100vw;
-  min-height: 50vh;
+  min-height: 35vh;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 

@@ -1,3 +1,4 @@
+<?php include("connection.php");?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,7 @@
 
 <body>
     <div class="main">
-        <form action="login.php" method="post">
+        <form action="" method="post">
             <h1>SIGNUP</h1>
             <input type="text" name="username" placeholder="Enter Username" required>
             <input type="email" name="email" placeholder="Enter Email" required>
@@ -46,26 +47,33 @@
 </html>
 
 <?php 
-include("connection.php");
 
 if(isset($_POST['register'])){
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
+
     if($password == $confirmPassword){
         $gender = $_POST['gender'];
-        $query = "INSERT INTO user_data(username, email, password, gender) VALUES('$username', '$email', '$password', '$gender')";
 
+        $query = "SELECT * FROM user_data WHERE username = '$username' OR email = '$email'";
         $data = mysqli_query($conn, $query);
-        if ($data) {
-            echo "<script>alert('Data entered')</script>";
+
+        if (mysqli_num_rows($data) > 0){
+            echo "<script>alert('User Already Exists')</script>";
         } else {
-            echo "<script>alert('Data not entered')</script>";
+            $query = "INSERT INTO user_data(username, email, password, gender) VALUES('$username', '$email', '$password', '$gender')";
+            $data = mysqli_query($conn, $query);
+
+            if($data){
+                echo "<script>alert('Account Created Successfully')</script>";
+            } else{
+                echo "<script>alert('Failed To Create Account')</script>";
+            }
         }
     } else{
         echo "<script>alert('Password not matched')</script>";
     }
-    
 }
 ?>
