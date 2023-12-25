@@ -29,6 +29,11 @@
   gap: 2vw;
 }
 
+.navbar .center a{
+  text-decoration: none;
+  color: black;
+}
+
 .navbar .center p {
   font-size: 18px;
   font-weight: 400;

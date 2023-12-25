@@ -103,16 +103,15 @@
   height: 10px;
   width: 10px;
   margin: 0 0.3vw;
-  background-color: #bbb;
+  background-color: black;
   border-radius: 50%;
   transition: all ease 0.3s;
 }
 
 .active,
 .dot:hover {
-  background-color: #a1a1a1;
+  background-color: crimson;
   scale: 1.5;
-  transition: all ease 0.3s;
 }
 
 /* Display Items */

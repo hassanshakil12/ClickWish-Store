@@ -4,7 +4,7 @@
         <h1>Logo</h1>
     </div>
     <div class="center">
-        <p>Home</p>
+        <p><a href="index.php">Home</a></p>
         <p class="shopBtn">Shop<i class="ri-arrow-down-s-fill"></i></p>
         <p>Contact</p>
         <p>About Us</p>

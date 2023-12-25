@@ -7,12 +7,15 @@
     <title>User Registration</title>
     <link rel="stylesheet" href="userStyle.css">
     <link rel="stylesheet" href="signup.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="main">
-        <form action="" method="post">
+        <form action="login.php" method="post">
             <h1>SIGNUP</h1>
             <input type="text" name="username" placeholder="Enter Username" required>
             <input type="email" name="email" placeholder="Enter Email" required>
