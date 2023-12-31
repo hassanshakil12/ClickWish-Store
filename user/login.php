@@ -20,7 +20,6 @@
 <body>
     <div class="main">
         <?php
-
         if (isset($_POST['login'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -28,8 +27,22 @@
             $query = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
             $data = mysqli_query($conn, $query);
 
+            $result = mysqli_fetch_assoc($data);
+            $username = $result["username"];
+            $gender = $result["gender"];
+            $userId = $result["id"];
+
             if (mysqli_num_rows($data) > 0) {
                 echo "<script>alert('login Successfull :)')</script>";
+                session_start();
+                
+                $_SESSION["loggedIn"] = true;
+                $_SESSION["email"] = $email;
+                $_SESSION["username"] = $username;
+                $_SESSION["gender"] = $gender;
+                $_SESSION["id"] = $userId;
+
+                header("location: ../index.php");
             } else {
                 echo "<script>alert('login Failed ;(')</script>";
             }

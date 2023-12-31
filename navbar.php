@@ -1,3 +1,13 @@
+<?php include("./user/connection.php");
+
+session_start();
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+    header('location: login.php');
+}
+
+?>
+
 <link rel="stylesheet" href="navbar.css">
 <div class="navbar">
     <div class="left">
@@ -17,14 +27,27 @@
     <div class="searchField">
         <input type="text" class="search" placeholder="Search">
     </div>
-    <div class="right">
-        <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
-        <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
-    </div>
-    <!-- <div class="right">
-        <h4>Username</h4>
-        <div class="pfp"><i class="ri-user-line"></i></div>
-    </div> -->
+
+    <?php
+    if($_SESSION["loggedIn"]){
+    ?>
+        <div class="right">
+            <h4><?php echo $_SESSION["username"]; ?></h4>
+            <div class="pfp"><i class="ri-user-line"></i></div>
+        </div>
+        
+    <?php
+    } else{
+    ?>
+        <div class="right">
+            <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
+            <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
+        </div>
+    
+    <?php
+    }
+    ?>
+
 </div>
 
 <div class="sideMenu">

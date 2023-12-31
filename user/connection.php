@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$user = "root";
 $password = "";
 $dbname = "clickwish";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $user, $password, $dbname);
 
 if (!$conn) {
     die("Connection Failed");
