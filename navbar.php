@@ -3,7 +3,6 @@
 session_start();
 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-    // header('location: login.php');
     $loggedIn = false;
 }
 else{
@@ -23,13 +22,6 @@ else{
         <p>Contact</p>
         <p>About Us</p>
         <p><i class="ri-search-line searchBtn"></i></p>
-        <?php
-        if($loggedIn == true){
-        ?>
-        <p><a href="./user/logout.php">logout</a></p>
-        <?php
-        }
-        ?>
     </div>
     <div class="menuLogo">
         <i class="ri-shopping-cart-line cart"></i>
@@ -45,6 +37,7 @@ else{
         <div class="right">
             <h4><?php echo $_SESSION["username"]; ?></h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
+            <div class="pfp"><a href="./user/logout.php"><i class="ri-shut-down-line"></i></a></div>
         </div>
         
     <?php

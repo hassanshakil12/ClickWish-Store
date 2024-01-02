@@ -31,7 +31,7 @@
 
             if (mysqli_num_rows($data) > 0) {
                 // echo "<script>alert('login Successfull :)')</script>";
-                
+
                 $result = mysqli_fetch_assoc($data);
                 $username = $result["username"];
                 $gender = $result["gender"];
@@ -49,7 +49,7 @@
             } else {
                 echo '
                 <div class="error">
-                    <p><strong>Error!  </strong>Login Failed due to incorrect user name or password</p>
+                    <p><strong>Error! </strong>Login Failed due to incorrect user name or password</p>
                 </div>';
             }
         }

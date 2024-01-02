@@ -1,13 +1,4 @@
-<?php include("./user/connection.php"); 
-
-session_start();
-
-if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
-    $loggedIn == false;
-    exit;
-}
-
-?>
+<?php include("./user/connection.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
