@@ -19,6 +19,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <p>Contact</p>
         <p>About Us</p>
         <p><i class="ri-search-line searchBtn"></i></p>
+        <p><a href="./user/logout.php">logout</a></p>
     </div>
     <div class="menuLogo">
         <i class="ri-shopping-cart-line cart"></i>

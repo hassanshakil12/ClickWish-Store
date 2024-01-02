@@ -168,7 +168,7 @@
   width: 100vw;
   height: 28vh;
   background-color: rgba(111, 111, 111, 0.75);
-  position: absolute;
+  position: fixed;
   opacity: 0;
   transition: all ease 0.35s;
   z-index: 10;
