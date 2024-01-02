@@ -108,12 +108,22 @@
 }
 
 .navbar .right .pfp{
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 35px;
   cursor: pointer;
+}
+
+.navbar .right .logOut{
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  background-color: black;
+  padding: 0 2px;
 }
 
 .navbar .right h4{
