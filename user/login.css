@@ -64,6 +64,23 @@ form a:hover{
     color: rgb(255, 255, 255);
 }
 
+.error{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgb(255, 0, 0);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+}
+
+.error strong{
+    font-weight: 900;
+}
+
 @media (max-width: 500px){
     form{
         width: 100vw;

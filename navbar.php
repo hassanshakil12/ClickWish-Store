@@ -3,7 +3,11 @@
 session_start();
 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-    header('location: login.php');
+    // header('location: login.php');
+    $loggedIn = false;
+}
+else{
+    $loggedIn = true;
 }
 
 ?>
@@ -19,7 +23,13 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <p>Contact</p>
         <p>About Us</p>
         <p><i class="ri-search-line searchBtn"></i></p>
+        <?php
+        if($loggedIn == true){
+        ?>
         <p><a href="./user/logout.php">logout</a></p>
+        <?php
+        }
+        ?>
     </div>
     <div class="menuLogo">
         <i class="ri-shopping-cart-line cart"></i>
@@ -30,7 +40,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     </div>
 
     <?php
-    if($_SESSION["loggedIn"]){
+    if($loggedIn == true){
     ?>
         <div class="right">
             <h4><?php echo $_SESSION["username"]; ?></h4>

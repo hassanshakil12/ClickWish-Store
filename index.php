@@ -3,8 +3,8 @@
 session_start();
 
 if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
-    header('location: ./user/login.php');
-        exit;
+    $loggedIn == false;
+    exit;
 }
 
 ?>
