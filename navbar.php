@@ -18,7 +18,7 @@ else{
     </div>
     <div class="center">
         <p><a href="index.php">Home</a></p>
-        <p class="shopBtn">Shop<i class="ri-arrow-down-s-fill"></i></p>
+        <p class="shopBtn"><a href="./shop.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
         <p>Contact</p>
         <p>About Us</p>
         <p><i class="ri-search-line searchBtn"></i></p>
@@ -37,6 +37,7 @@ else{
         <div class="right">
             <h4><?php echo $_SESSION["username"]; ?></h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
+            <div class="pfp"><i class="ri-shopping-cart-line"></i></div>
             <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a></div>
         </div>
         
@@ -68,7 +69,7 @@ else{
     <p>About Us</p>
 </div>
 
-<div class="dropdown">
+<!-- <div class="dropdown">
     <div class="category">
         <div class="section">
             <h4>Men Fashion</h4>
@@ -113,4 +114,4 @@ else{
             <p>> Lights & Wall Art</p>
         </div>
     </div>
-</div>
+</div> -->
