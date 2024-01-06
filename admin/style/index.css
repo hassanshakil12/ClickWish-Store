@@ -1,6 +1,6 @@
 .main{
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     background-color: black;
 }
 
@@ -44,16 +44,37 @@
 table{
     background-color: white;
     font-size: 20px;
+    padding: 0.5vw;
 }
 
 table thead th{
-    padding: 2vh 5vw;
+    padding: 0.2vh 0.5vw;
 }
 
-table tr{
+/* table tr{
     font-size: 20px;
+} */
+
+/* table tr td{
+    padding: 2vh 5vw;
+} */
+
+.updateBtn{
+    padding: 0.6vh 0.8vw;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
 }
 
-table tr td{
-    padding: 2vh 5vw;
+.deleteBtn{
+    padding: 0.6vh 0.8vw;
+    background-color: rgb(255, 0, 0);
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
 }

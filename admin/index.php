@@ -62,8 +62,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                         <td>$row[price]</td>
                         <td>$row[quantity]</td>
                         <td>$row[category]</td>
-                        <td>Update</td>
-                        <td>Delete</td>
+                        <td><input type='submit' value='Update' class='updateBtn' name='update'></td>
+                        <td><input type='submit' value='Delete' class='deleteBtn' name='delete'></td>
                     </tr>
                     ";
                 }
