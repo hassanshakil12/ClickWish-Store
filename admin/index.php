@@ -63,7 +63,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                         <td>$row[quantity]</td>
                         <td>$row[category]</td>
                         <td><a href='update.php? ID=$row[id]' class='updateBtn'>Update</a></td>
-                        <td><a href='#' class='deleteBtn'>Delete</a></td>
+                        <td><a href='delete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
                     </tr>
                     ";
                 }

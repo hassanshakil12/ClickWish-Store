@@ -2,14 +2,13 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
+    padding-top: 12vh;
 }
 
 .main h1{
     position: relative;
     color: white;
     font-size: 100px;
-    padding-top: 15vh;
-    padding-left: 2vw;
     /* background-color: gray; */
     width: 100vw;
     display: flex;
@@ -45,19 +44,20 @@ table{
     background-color: white;
     font-size: 20px;
     padding: 0.5vw;
+    border-radius: 25px;
 }
 
 table thead th{
     padding: 0.2vh 0.5vw;
 }
 
-/* table tr{
+table tr{
     font-size: 20px;
-} */
+}
 
-/* table tr td{
+table tr td{
     padding: 2vh 5vw;
-} */
+}
 
 .updateBtn{
     padding: 0.6vh 0.8vw;
@@ -73,7 +73,7 @@ table thead th{
 .deleteBtn{
     padding: 0.6vh 0.8vw;
     background-color: rgb(255, 0, 0);
-    color: black;
+    color: white;
     cursor: pointer;
     font-size: 20px;
     border: none;

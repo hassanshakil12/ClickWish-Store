@@ -19,7 +19,17 @@
 <body>
     <?php include("navbar.php")?>
     <div class="main">
-        
+        <div class="container">
+            <div class="product">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+                    <h1>Cold Drink</h1>
+                    <p>$299</p>
+                </div>
+            </div>
+        </div>
     </div>
     <?php include("footer.php")?>
 </body>

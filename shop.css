@@ -1,6 +1,51 @@
-.main{
-    width: 100vw;
-    min-height: 100vh;
-    background-color: black;
-    color: white;
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 13vh 0 3vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
+
+.container {
+  height: auto;
+  width: 97.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(113, 11, 32);
+  gap: 2px;
+  border-radius: 15px;
+}
+
+.product {
+  height: 58vh;
+  width: 19%;
+  margin-bottom: 20px;
+  background-color: black;
+  /* border: greenyellow 1px solid; */
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.product .top{
+    background-color: aqua;
+    width: 100%;
+    height: 70%;
+}
+
+.product .bottom{
+    background-color: chocolate;
+    width: 100%;
+    height: 30%;
+    padding: 10px 20px;
+}
+ .product .bottom p{
+    margin-top: 70px;
+    font-size: 30px;
+ }
