@@ -22,10 +22,32 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style/product.css">
     <title>Product</title>
 </head>
 <body>
     <?php include("./navbar.php")?>
+    <div class="main">
+        <center>
+        <form action="" method="post">
+            <h1>Product Details</h1>
+            <input type="text" name="productName" placeholder="Product Name" required>
+            <input type="text" name="productPrice" placeholder="Product Price" required>
+            <input type="file" class="img" name="productImage" placeholder="Upload Images" required>
+            <input type="text" name="productQuantity" placeholder="Product Quantity" required>
+            <div class="gndr">
+                <select name="category">
+                    <option selected>--Select Category--</option>
+                    <option value="clothing">Fashion & Clothing</option>
+                    <option value="electronics">Electronics & Appliances</option>
+                    <option value="devices">Phones & Laptops</option>
+                    <option value="food">Food & Beverages</option>
+                </select>
+            </div>
+            
+            <input type="submit" value="Add Product" class="btn" name="addProduct">
+        </form>
+        </center>
+    </div>
 </body>
 </html>
