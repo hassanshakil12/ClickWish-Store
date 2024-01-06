@@ -26,13 +26,13 @@
 
             if($email == "admin@admin.com" && $password == "admin"){
                 session_start();
+
                 $_SESSION["username"] = "Admin";
+                $_SESSION["loggedIn"] = true;
                 header("location: ../admin/index.php");
             }else {
                 $query = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
                 $data = mysqli_query($conn, $query);
-
-
 
                 if (mysqli_num_rows($data) > 0) {
                     // echo "<script>alert('login Successfull :)')</script>";

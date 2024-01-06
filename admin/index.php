@@ -1,3 +1,15 @@
+<!-- <?php
+// include("../user/connection.php");
+
+
+// if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
+//     header('location: login.php');
+// }
+// else{
+//     session_start();
+// }
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +24,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style/index.css">
     <title>Admin Panel</title>
 </head>
 
 <body>
     <?php include("navbar.php") ?>
+    <div class="main">
+        <h1>Welcome To Admin Panel</h1>
+    </div>
 </body>
 
 </html>

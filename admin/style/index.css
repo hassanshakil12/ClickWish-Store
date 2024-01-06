@@ -1,0 +1,14 @@
+.main{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.main h1{
+    position: relative;
+    color: white;
+    font-size: 100px;
+    padding-top: 19vh;
+    padding-left: 2vw;
+    width: 40%;
+}

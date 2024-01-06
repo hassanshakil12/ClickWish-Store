@@ -11,7 +11,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 
 ?>
 
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="./style/navbar.css">
 <div class="navbar">
     <div class="left">
         <h1>Logo</h1>
@@ -22,25 +22,18 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <p><a href="./users.php">Users</a></p>
         <p><a href="./accounts.php">Account</a></p>
     </div>
-    <div class="menuLogo">
-        <i class="ri-shopping-cart-line cart"></i>
-        <i class="ri-menu-fill menu"></i>
-    </div>
-    <div class="searchField">
-        <input type="text" class="search" placeholder="Search">
-    </div>
 
-    <?php if ($loggedIn == true) { ?>
+    <!-- <?php if ($loggedIn == true) { ?> -->
         <div class="right">
             <h4>
                 <?php echo $_SESSION["username"]; ?>
             </h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
-            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
+            <div class="logOut"><a href="../user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
 
-    <?php } ?>
+    <!-- <?php } ?> -->
 
 </div>
 
