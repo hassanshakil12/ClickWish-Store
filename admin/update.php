@@ -52,9 +52,9 @@ if(isset($_POST['update'])){
             <form action="" method="post">
                 <h1>Product Update</h1>
                 <input type="text" value="<?php echo $row['name']?>" name="productName" placeholder="Product Name" required>
-                <input type="text" value="<?php echo $row['price'] ?>" name="productPrice" placeholder="Product Price" required>
+                <input type="number" value="<?php echo $row['price'] ?>" name="productPrice" placeholder="Product Price" required>
                 <input type="file" class="img" name="productImage" placeholder="Upload Images">
-                <input type="text" value="<?php echo $row['quantity'] ?>" name="productQuantity" placeholder="Product Quantity" required>
+                <input type="number" value="<?php echo $row['quantity'] ?>" name="productQuantity" placeholder="Product Quantity" required>
 
                 <select name="category"  value="<?php echo $row['category'] ?>">
                     <option selected>--Select Category--</option>
@@ -64,6 +64,8 @@ if(isset($_POST['update'])){
                     <option value="Food" name="category">Food & Beverages</option>
                     <option value="Sports" name="category">Sports & Fitness</option>
                     <option value="Home" name="category">Home & Decor</option>
+                    <option value="Entertainment" name="category">Gaming & Entertainment</option>
+                    <option value="Stationary" name="category">Books & Stationary</option>
                 </select>
 
                 <input type="hidden" value="<?php echo $row['id'] ?>" name="id">

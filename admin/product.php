@@ -34,9 +34,9 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             <form action="" method="post">
                 <h1>Product Details</h1>
                 <input type="text" name="productName" placeholder="Product Name" required>
-                <input type="text" name="productPrice" placeholder="Product Price" required>
+                <input type="number" name="productPrice" placeholder="Product Price" required>
                 <input type="file" class="img" name="productImage" placeholder="Upload Images">
-                <input type="text" name="productQuantity" placeholder="Product Quantity" required>
+                <input type="number" name="productQuantity" placeholder="Product Quantity" required>
 
                 <select name="category">
                     <option selected>--Select Category--</option>
@@ -46,6 +46,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                     <option value="Food" name="category">Food & Beverages</option>
                     <option value="Sports" name="category">Sports & Fitness</option>
                     <option value="Home" name="category">Home & Decor</option>
+                    <option value="Entertainment" name="category">Gaming & Entertainment</option>
+                    <option value="Stationary" name="category">Books & Stationary</option>
                 </select>
 
                 <input type="submit" value="Add Product" class="btn" name="submit">

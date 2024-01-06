@@ -1,4 +1,4 @@
-<?php include("./user/connection.php") ?>
+<?php include("./user/connection.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shop.css">
-    <title>Shop</title>
+    <title>Electronics & Appliances</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <div class="main">
         <div class="category">
             <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
-            <h4><a href="">Electronics & Appliances</a></h4>
+            <h4><a href="./electronics.php">Electronics & Appliances</a></h4>
             <h4><a href="">Phones & Laptops</a></h4>
             <h4><a href="">Food & Beverages</a></h4>
             <h4><a href="">Sports & Fitness</a></h4>
@@ -30,7 +30,9 @@
             $data = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($data)) {
-                echo "
+                $pageCategory = $row['category'];
+                if ($pageCategory == "Electronics") {
+                    echo "
             <div class='product'>
                 <div class='top'>
 
@@ -47,6 +49,7 @@
                 </div>
             </div>
             ";
+                }
             }
             ?>
         </div>

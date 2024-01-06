@@ -23,7 +23,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <h1>Logo</h1>
     </div>
     <div class="center">
-        <p><a href="index.php">Home</a></p>
+        <p><a href="./index.php">Home</a></p>
         <p class="shopBtn"><a href="./shop.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
         <p>Contact</p>
         <p>About Us</p>

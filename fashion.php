@@ -1,28 +1,26 @@
-<?php include("./user/connection.php") ?>
+<?php include("./user/connection.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shop.css">
-    <title>Shop</title>
+    <title>Fashion & Clothing</title>
 </head>
-
 <body>
     <?php include("navbar.php") ?>
     <div class="main">
         <div class="category">
             <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
-            <h4><a href="">Electronics & Appliances</a></h4>
-            <h4><a href="">Phones & Laptops</a></h4>
-            <h4><a href="">Food & Beverages</a></h4>
-            <h4><a href="">Sports & Fitness</a></h4>
-            <h4><a href="">Home & Decor</a></h4>
-            <h4><a href="">Gaming & Entertainment</a></h4>
-            <h4><a href="">Books & Stationary</a></h4>
+            <h4><a href="./electronics.php">Electronics & Appliances</a></h4>
+            <h4><a href="./devices.php">Phones & Laptops</a></h4>
+            <h4><a href="./food.php">Food & Beverages</a></h4>
+            <h4><a href="./sports.php">Sports & Fitness</a></h4>
+            <h4><a href="./home.php">Home & Decor</a></h4>
+            <h4><a href="./electronics.php">Gaming & Entertainment</a></h4>
+            <h4><a href="./stationary.php">Books & Stationary</a></h4>
         </div>
         <div class='container'>
             <?php
@@ -30,7 +28,9 @@
             $data = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($data)) {
-                echo "
+                $pageCategory = $row['category'];
+                if($pageCategory == "Clothing"){
+                    echo "
             <div class='product'>
                 <div class='top'>
 
@@ -47,11 +47,11 @@
                 </div>
             </div>
             ";
+                }
             }
             ?>
         </div>
     </div>
     <?php include("footer.php") ?>
 </body>
-
 </html>

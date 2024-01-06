@@ -7,19 +7,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 4vh;
   color: white;
 }
 
 .container {
   height: auto;
-  width: 97.5vw;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
-  background-color: rgb(113, 11, 32);
+  background-color: crimson;
   gap: 2px;
-  border-radius: 15px;
 }
 
 .product {
@@ -73,4 +74,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.main .category{
+  width: 100vw;
+  height: 6vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  border-bottom: 1px crimson solid;
+  border-top: 1px crimson solid;
+}
+
+.main .category a{
+  text-decoration: none;
+  color: crimson;
+  font-size: 23px;
+  font-weight: 400;
 }
