@@ -1,3 +1,14 @@
+<?php
+include("../user/connection.php");
+session_start();
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+    header('location: ../user/login.php');
+    $loggedIn = false;
+} else {
+    $loggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

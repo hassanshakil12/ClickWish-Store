@@ -1,14 +1,14 @@
-<!-- <?php
-// include("../user/connection.php");
+<?php
+include("../user/connection.php");
+session_start();
 
-
-// if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
-//     header('location: login.php');
-// }
-// else{
-//     session_start();
-// }
-?> -->
+if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
+    header('location: ../user/login.php');
+    $loggedIn = false;
+} else {
+    $loggedIn = true;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,12 @@
 <body>
     <?php include("navbar.php") ?>
     <div class="main">
-        <h1>Welcome To Admin Panel</h1>
+        <center><h1>Welcome To Admin Panel</h1></center>
+        <div class="middle">
+            <p><a href="./product.php">Add Products</a></p>
+            <p><a href="./users.php">Users Information</a></p>
+            <p><a href="./accounts.php">Accounts & Payments</a></p>
+        </div>
     </div>
 </body>
 

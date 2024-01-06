@@ -1,16 +1,3 @@
-<?php 
-include("../user/connection.php");
-
-session_start();
-
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-    $loggedIn = false;
-} else {
-    $loggedIn = true;
-}
-
-?>
-
 <link rel="stylesheet" href="./style/navbar.css">
 <div class="navbar">
     <div class="left">
@@ -23,7 +10,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <p><a href="./accounts.php">Account</a></p>
     </div>
 
-    <!-- <?php if ($loggedIn == true) { ?> -->
+    <?php if ($loggedIn == true) { ?>
         <div class="right">
             <h4>
                 <?php echo $_SESSION["username"]; ?>
@@ -33,7 +20,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             </div>
         </div>
 
-    <!-- <?php } ?> -->
+    <?php } ?>
 
 </div>
 
