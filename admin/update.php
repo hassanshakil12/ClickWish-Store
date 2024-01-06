@@ -8,10 +8,29 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 } else {
     $loggedIn = true;
 }
+
+$id = $_GET['ID'];
+
+$query = "SELECT * FROM `product_details` WHERE id = $id";
+$data = mysqli_query($conn, $query);
+
+$row = mysqli_fetch_array($data);
+
+if(isset($_POST['update'])){
+    $id = $_POST['id'];
+    $productName = $_POST['productName'];
+    $productPrice = $_POST['productPrice'];
+    $productQuantity = $_POST['productQuantity'];
+    $category = $_POST['category'];
+
+    $query = "UPDATE `product_details` SET `name`='$productName',`price`='$productPrice',`quantity`='$productQuantity',`category`='$category' WHERE id = $id";
+    mysqli_query($conn, $query);
+    header("location: index.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,22 +42,21 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./style/product.css">
-    <title>Product</title>
+    <link rel="stylesheet" href="style/update.css">
+    <title>Update Product</title>
 </head>
-
 <body>
-    <?php include("./navbar.php") ?>
-    <div class="main">
+    <?php include("navbar.php")?>
+    <div class="main" style="min-height: 100vh;">
         <center>
             <form action="" method="post">
-                <h1>Product Details</h1>
-                <input type="text" name="productName" placeholder="Product Name" required>
-                <input type="text" name="productPrice" placeholder="Product Price" required>
+                <h1>Product Update</h1>
+                <input type="text" value="<?php echo $row['name']?>" name="productName" placeholder="Product Name" required>
+                <input type="text" value="<?php echo $row['price'] ?>" name="productPrice" placeholder="Product Price" required>
                 <input type="file" class="img" name="productImage" placeholder="Upload Images">
-                <input type="text" name="productQuantity" placeholder="Product Quantity" required>
+                <input type="text" value="<?php echo $row['quantity'] ?>" name="productQuantity" placeholder="Product Quantity" required>
 
-                <select name="category">
+                <select name="category"  value="<?php echo $row['category'] ?>">
                     <option selected>--Select Category--</option>
                     <option value="Clothing" name="category">Fashion & Clothing</option>
                     <option value="Electronics" name="category">Electronics & Appliances</option>
@@ -48,35 +66,10 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                     <option value="Home" name="category">Home & Decor</option>
                 </select>
 
-                <input type="submit" value="Add Product" class="btn" name="submit">
+                <input type="hidden" value="<?php echo $row['id'] ?>" name="id">
+                <input type="submit" value="Update Product" class="btn" name="update">
             </form>
         </center>
     </div>
 </body>
-
 </html>
-
-<?php
-if (isset($_POST['submit'])) {
-    $productName = $_POST['productName'];
-    $productPrice = $_POST['productPrice'];
-    $productQuantity = $_POST['productQuantity'];
-    $category = $_POST['category'];
-
-    // $productImage = $_FILES['productImage'];
-    // $productImageLocation = $_FILES['productImage']['tmp_name'];
-    // $productImageName = $_FILES['productImage']['name'];
-
-    // move_uploaded_file($productImageLocation, "./product_images/".$productImageName);
-
-    $query = "INSERT INTO `product_details`(`name`, `price`, `quantity`, `category`) VALUES ('$productName','$productPrice','$productQuantity','$category')";
-    $data = mysqli_query($conn, $query);
-    header("location: index.php");
-
-    if($data){
-        $productAdded = true;
-    } else{
-        $productAdded = false;
-    }
-}
-?>

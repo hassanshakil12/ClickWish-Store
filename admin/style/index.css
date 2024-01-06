@@ -67,6 +67,7 @@ table thead th{
     font-size: 20px;
     border: none;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .deleteBtn{
@@ -77,4 +78,5 @@ table thead th{
     font-size: 20px;
     border: none;
     border-radius: 5px;
+    text-decoration: none;
 }
