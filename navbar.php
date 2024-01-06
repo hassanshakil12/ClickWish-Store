@@ -4,12 +4,18 @@ session_start();
 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     $loggedIn = false;
-}
-else{
+} else {
     $loggedIn = true;
 }
 
 ?>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
 <link rel="stylesheet" href="navbar.css">
 <div class="navbar">
@@ -21,7 +27,6 @@ else{
         <p class="shopBtn"><a href="./shop.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
         <p>Contact</p>
         <p>About Us</p>
-        <p><i class="ri-search-line searchBtn"></i></p>
     </div>
     <div class="menuLogo">
         <i class="ri-shopping-cart-line cart"></i>
@@ -32,24 +37,27 @@ else{
     </div>
 
     <?php
-    if($loggedIn == true){
-    ?>
+    if ($loggedIn == true) {
+        ?>
         <div class="right">
-            <h4><?php echo $_SESSION["username"]; ?></h4>
+            <h4>
+                <?php echo $_SESSION["username"]; ?>
+            </h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
             <div class="pfp"><i class="ri-shopping-cart-line"></i></div>
-            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a></div>
+            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
+            </div>
         </div>
-        
-    <?php
-    } else{
-    ?>
+
+        <?php
+    } else {
+        ?>
         <div class="right">
             <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
             <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
         </div>
-    
-    <?php
+
+        <?php
     }
     ?>
 
