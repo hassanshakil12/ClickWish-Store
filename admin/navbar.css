@@ -1,0 +1,284 @@
+.navbar {
+  width: 100vw;
+  height: 9vh;
+  position: fixed;
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 99;
+}
+
+.navbar .left {
+  position: absolute;
+  width: fit-content;
+  left: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.navbar .center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  gap: 2vw;
+}
+
+.navbar .center a{
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .center p {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.navbar .menuLogo {
+  position: absolute;
+  font-size: 35px;
+  right: 0;
+  margin: 2vw;
+  display: none;
+  width: auto;
+}
+
+.navbar .menuLogo i {
+  cursor: pointer;
+  position: relative;
+  margin-left: 2vw;
+}
+
+.navbar .searchField {
+  position: absolute;
+  width: auto;
+  transition: all ease 0.3s;
+  top: 35vh;
+  display: none;
+}
+
+.navbar .searchField input {
+  position: relative;
+  width: 40vw;
+  height: 5vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  padding: 0 25px;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.navbar .right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  right: 2vw;
+  width: fit-content;
+  gap: 1vw;
+}
+
+.navbar .right p {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.6vh 0.8vw;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .right .signUpBtn {
+  background-color: black;
+}
+
+.navbar .right .signUpBtn a {
+  color: crimson;
+}
+
+.navbar .right .pfp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.navbar .right .logOut{
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  background-color: black;
+  padding: 0 2px;
+}
+
+.navbar .right h4{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.sideMenu {
+  position: absolute;
+  background-color: rgba(220, 20, 60, 0.75);
+  backdrop-filter: blur(10px);
+  height: calc(100vh - 9vh);
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  padding: 5vw;
+  box-shadow: 1px 1px 10px black;
+  transition: all ease 0.5s;
+  opacity: 0;
+  display: none;
+  width: none;
+}
+
+.sideMenu > p {
+  font-size: 25px;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 2vh;
+}
+
+.sideMenu .shopMenu {
+  background-color: rgb(220, 40, 70);
+  border-radius: 7px;
+  margin-bottom: 2vh;
+  transition: all ease 0.35s;
+  padding: 1vw 5vw;
+  display: none;
+}
+
+.shopMenu p {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.shopMenu p:not(:last-child) {
+  margin-bottom: 1.5vh;
+}
+
+.dropdown {
+  top: 9vh;
+  width: 100vw;
+  height: 28vh;
+  background-color: rgba(111, 111, 111, 0.75);
+  position: fixed;
+  opacity: 0;
+  transition: all ease 0.35s;
+  z-index: 10;
+}
+
+.dropdown .category {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+  padding: 2vh 0;
+}
+
+.dropdown .section {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  position: relative;
+}
+
+.dropdown .section h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dropdown .section p {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.dropdown h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .navbar .center,
+  .navbar .right {
+    display: none;
+  }
+  
+  .navbar .menuLogo {
+    display: block;
+    gap: 5vw;
+    width: auto;
+  }
+
+  .navbar .searchField{
+    top: 0;
+    opacity: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .searchField input{
+    opacity: 0.8;
+  }
+
+  .main .sideMenu{
+    width: 45vw;
+  }
+
+  .main .sideMenu .shopMenu{
+    padding: 2vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar .center {
+    display: none;
+  }
+
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .menuLogo {
+    display: block;
+  }
+
+  .navbar .searchField {
+    top: auto;
+    opacity: 1;
+  }
+  .main .dropdown {
+    display: none;
+    width: 100vw;
+  }
+
+  .main .sideMenu{
+    width: 55vw;
+  }
+}
+
+@media (max-width: 375px){
+  .navbar .searchField{
+    display: none;
+  }
+}
