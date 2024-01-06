@@ -2,7 +2,7 @@
 include("../user/connection.php");
 session_start();
 
-if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     header('location: ../user/login.php');
     $loggedIn = false;
 } else {
@@ -31,12 +31,45 @@ if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
 <body>
     <?php include("navbar.php") ?>
     <div class="main">
-        <center><h1>Welcome To Admin Panel</h1></center>
+        <center>
+            <h1>Welcome To Admin Panel</h1>
+        </center>
         <div class="middle">
             <p><a href="./product.php">Add Products</a></p>
             <p><a href="./users.php">Users Information</a></p>
             <p><a href="./accounts.php">Accounts & Payments</a></p>
         </div>
+        <center>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <?php
+                $query = "SELECT * FROM `product_details`";
+                $data = mysqli_query($conn, $query);
+
+                while($row = mysqli_fetch_array($data)){
+                    echo"
+                    <tr>
+                        <td>$row[id]</td>
+                        <td>$row[name]</td>
+                        <td>$row[price]</td>
+                        <td>$row[quantity]</td>
+                        <td>$row[category]</td>
+                        <td>Update</td>
+                        <td>Delete</td>
+                    </tr>
+                    ";
+                }
+                ?>
+            </table>
+        </center>
     </div>
 </body>
 

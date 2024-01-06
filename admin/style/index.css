@@ -40,3 +40,20 @@
     border: 1px solid black;
     cursor: pointer;
 }
+
+table{
+    background-color: white;
+    font-size: 20px;
+}
+
+table thead th{
+    padding: 2vh 5vw;
+}
+
+table tr{
+    font-size: 20px;
+}
+
+table tr td{
+    padding: 2vh 5vw;
+}

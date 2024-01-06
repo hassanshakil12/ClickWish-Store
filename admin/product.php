@@ -11,6 +11,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,29 +26,54 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     <link rel="stylesheet" href="./style/product.css">
     <title>Product</title>
 </head>
+
 <body>
-    <?php include("./navbar.php")?>
+    <?php include("./navbar.php") ?>
     <div class="main">
         <center>
-        <form action="" method="post">
-            <h1>Product Details</h1>
-            <input type="text" name="productName" placeholder="Product Name" required>
-            <input type="text" name="productPrice" placeholder="Product Price" required>
-            <input type="file" class="img" name="productImage" placeholder="Upload Images" required>
-            <input type="text" name="productQuantity" placeholder="Product Quantity" required>
-            <div class="gndr">
+            <form action="" method="post">
+                <h1>Product Details</h1>
+                <input type="text" name="productName" placeholder="Product Name" required>
+                <input type="text" name="productPrice" placeholder="Product Price" required>
+                <input type="file" class="img" name="productImage" placeholder="Upload Images">
+                <input type="text" name="productQuantity" placeholder="Product Quantity" required>
+
                 <select name="category">
                     <option selected>--Select Category--</option>
-                    <option value="clothing">Fashion & Clothing</option>
-                    <option value="electronics">Electronics & Appliances</option>
-                    <option value="devices">Phones & Laptops</option>
-                    <option value="food">Food & Beverages</option>
+                    <option value="clothing" name="category">Fashion & Clothing</option>
+                    <option value="electronics" name="category">Electronics & Appliances</option>
+                    <option value="devices" name="category">Phones & Laptops</option>
+                    <option value="food" name="category">Food & Beverages</option>
                 </select>
-            </div>
-            
-            <input type="submit" value="Add Product" class="btn" name="addProduct">
-        </form>
+
+                <input type="submit" value="Add Product" class="btn" name="submit">
+            </form>
         </center>
     </div>
 </body>
+
 </html>
+
+<?php
+if (isset($_POST['submit'])) {
+    $productName = $_POST['productName'];
+    $productPrice = $_POST['productPrice'];
+    $productQuantity = $_POST['productQuantity'];
+    $category = $_POST['category'];
+
+    // $productImage = $_FILES['productImage'];
+    // $productImageLocation = $_FILES['productImage']['tmp_name'];
+    // $productImageName = $_FILES['productImage']['name'];
+
+    // move_uploaded_file($productImageLocation, "./product_images/".$productImageName);
+
+    $query = "INSERT INTO `product_details`(`name`, `price`, `quantity`, `category`) VALUES ('$productName','$productPrice','$productQuantity','$category')";
+    $data = mysqli_query($conn, $query);
+
+    if($data){
+        $productAdded = true;
+    } else{
+        $productAdded = false;
+    }
+}
+?>
