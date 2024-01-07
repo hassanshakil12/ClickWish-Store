@@ -23,7 +23,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <h1>Logo</h1>
     </div>
     <div class="center">
-        <p><a href="./index.php">Home</a></p>
+        <p><a href="index.php">Home</a></p>
         <p class="shopBtn"><a href="./shop.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
         <p>Contact</p>
         <p>About Us</p>
@@ -44,7 +44,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                 <?php echo $_SESSION["username"]; ?>
             </h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
-            <div class="pfp"><i class="ri-shopping-cart-line"></i></div>
+            <div class="pfp"><a href="./cart.php"><i class="ri-shopping-cart-line"></i></a></div>
             <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
