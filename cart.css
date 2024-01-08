@@ -28,3 +28,14 @@ table tr{
 table tr td{
     padding: 2vh 5vw;
 }
+
+.deleteBtn{
+    padding: 0.6vh 0.8vw;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}

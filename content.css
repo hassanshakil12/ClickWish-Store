@@ -46,6 +46,11 @@
   text-align: justify;
 }
 
+.textContent button a{
+  text-decoration: none;
+  color: crimson;
+}
+
 .textContent button{
   font-size: 1.25vw;
   padding: 1vh 2vw;
@@ -145,6 +150,11 @@
   height: 100%;
   background-color: red;
   scale: 1;
+}
+
+.card .image button a{
+  color: black;
+  text-decoration: none;
 }
 
 .card .image button {

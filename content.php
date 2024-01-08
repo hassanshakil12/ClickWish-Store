@@ -8,7 +8,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni officia pariatur fuga autem
                     eligendi quod voluptate ut. Ipsa officia obcaecati ad dignissimos rem atque accusantium
                     corrupti quam sequi.</p>
-                <button>Shop Now</button>
+                <button><a href="shop.php">Shop Now</a></button>
             </div>
             <img src="Assets/Slider/img1.jpg">
         </div>
@@ -32,22 +32,22 @@
         <div class="card">
             <div class="image">
                 <img src="Assets/Product Slider/img1.jpg" alt="img01">
-                <button>Shop Now</button>
+                <button><a href="shop.php">Shop Now</a></button>
             </div>
         </div>
         <div class="card">
             <div class="image">
-                <img src="Assets/Product Slider/img2.jpg" alt="img01"><button>Shop Now</button>
+                <img src="Assets/Product Slider/img2.jpg" alt="img01"><button><a href="shop.php">Shop Now</a></button>
             </div>
         </div>
         <div class="card">
             <div class="image">
-                <img src="Assets/Product Slider/img3.jpg" alt="img01"><button>Shop Now</button>
+                <img src="Assets/Product Slider/img3.jpg" alt="img01"><button><a href="shop.php">Shop Now</a></button>
             </div>
         </div>
         <div class="card">
             <div class="image">
-                <img src="Assets/Product Slider/img4.jpg" alt="img01"><button>Shop Now</button>
+                <img src="Assets/Product Slider/img4.jpg" alt="img01"><button><a href="shop.php">Shop Now</a></button>
             </div>
         </div>
     </div>
