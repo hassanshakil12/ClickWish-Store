@@ -20,7 +20,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 <link rel="stylesheet" href="navbar.css">
 <div class="navbar">
     <div class="left">
-        <h1>Logo</h1>
+        <h1>ClickWish</h1>
     </div>
     <div class="center">
         <p><a href="index.php">Home</a></p>

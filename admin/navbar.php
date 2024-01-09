@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="./style/navbar.css">
 <div class="navbar">
     <div class="left">
-        <h1>Logo</h1>
+        <h1>ClickWish</h1>
     </div>
     <div class="center">
         <p><a href="./index.php">Dashboard</a></p>

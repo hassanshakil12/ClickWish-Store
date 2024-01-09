@@ -19,7 +19,7 @@
             <h4><a href="./food.php">Food & Beverages</a></h4>
             <h4><a href="./sports.php">Sports & Fitness</a></h4>
             <h4><a href="./home.php">Home & Decor</a></h4>
-            <h4><a href="./electronics.php">Gaming & Entertainment</a></h4>
+            <h4><a href="./entertainment.php">Gaming & Entertainment</a></h4>
             <h4><a href="./stationary.php">Books & Stationary</a></h4>
         </div>
         <div class='container'>
