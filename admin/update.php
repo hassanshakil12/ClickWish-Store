@@ -42,7 +42,7 @@ if(isset($_POST['update'])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style/update.css">
+    <link rel="stylesheet" href="./css/update.css">
     <title>Update Product</title>
 </head>
 <body>

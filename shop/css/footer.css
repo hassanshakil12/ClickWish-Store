@@ -1,0 +1,145 @@
+footer{
+  background-color: crimson;
+  width: 100vw;
+  min-height: 35vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+footer .top{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  min-height: 90%;
+  padding: 4vw;
+  overflow: hidden;
+}
+
+footer .top a{
+  text-decoration: none;
+  color: #fff;
+  transition: all ease 0.3s;
+}
+
+footer .top a:hover{
+  color: black;
+}
+
+footer .top h1{
+  font-size: 50px;
+  font-weight: 400;
+}
+
+footer .top h4{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+footer .top .center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+footer .top .center button{
+  padding: 1vh 2vw;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+footer .top .center .links{
+  margin-top: 3vh;
+}
+
+footer .top .center i{
+  width: 50px;
+  height: 50px;
+  padding: 0.5vw;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 25px;
+  margin: 0 0.3vw;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+footer .top .center i:hover{
+  color: crimson;
+  background-color: black;
+}
+
+footer .bottom{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 100vw;
+  height: 10%;
+  color: #a1a1a1;
+  flex-wrap: wrap;
+}
+
+footer .bottom h4{
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.1vw;
+}
+
+footer .bottom a{
+  color: crimson;
+  text-decoration: none;
+}
+
+@media (max-width: 992px){
+  footer .top{
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  footer .top .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer .top .center{
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  footer .top .center .links{
+    margin-top: 0;
+  }
+
+  footer .top .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  footer .top .center{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}

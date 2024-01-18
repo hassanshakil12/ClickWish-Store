@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./style/navbar.css">
+<link rel="stylesheet" href="./css/navbar.css">
 <div class="navbar">
     <div class="left">
         <h1>ClickWish</h1>

@@ -24,7 +24,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Admin Panel</title>
 </head>
 
