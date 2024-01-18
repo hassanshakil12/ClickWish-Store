@@ -1,5 +1,5 @@
 <?php
-include("../user/connection.php");
+include("./connection.php");
 if (isset($_POST['submit'])) {
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];

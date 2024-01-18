@@ -45,7 +45,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             </h4>
             <div class="pfp"><i class="ri-user-line"></i></div>
             <div class="pfp"><a href="./cart.php"><i class="ri-shopping-cart-line"></i></a></div>
-            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
+            <div class="logOut"><a href="../user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
 
