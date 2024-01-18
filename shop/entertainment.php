@@ -42,7 +42,7 @@
                     <div class='bottomBottom'>
                         <p>$row[price] Rs</p>
                         <div class='right'>
-                            <a href='insertCart.php? ID=$row[id]' class='right'><i class='ri-shopping-cart-line'></i></a>
+                            <a href='../cart/insertCart.php? ID=$row[id]' class='right'><i class='ri-shopping-cart-line'></i></a>
                             <a href='#'><i class='ri-heart-line'></i></a>
                         </div>
                     </div>

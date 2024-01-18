@@ -38,7 +38,7 @@
                         <td>$row[name]</td>
                         <td>$row[price]</td>
                         <td>$row[category]</td>
-                        <td><a href='cartDelete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
+                        <td><a href='./cartDelete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
                     </tr>
                     ";
                 }
