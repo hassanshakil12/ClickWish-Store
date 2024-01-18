@@ -1,4 +1,4 @@
-<?php include("./user/connection.php") ?>
+<?php include("./connection.php") ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/shop.css">
     <title>Shop</title>
 </head>
 
@@ -15,14 +15,14 @@
     <?php include("navbar.php") ?>
     <div class="main">
         <div class="category">
-            <h4><a href="./shop/fashion.php">Fashion & Clothing</a></h4>
-            <h4><a href="./shop/electronics.php">Electronics & Appliances</a></h4>
-            <h4><a href="./shop/devices.php">Phones & Laptops</a></h4>
-            <h4><a href="./shop/food.php">Food & Beverages</a></h4>
-            <h4><a href="./shop/sports.php">Sports & Fitness</a></h4>
-            <h4><a href="./shop/home.php">Home & Decor</a></h4>
-            <h4><a href="./shop/entertainment.php">Gaming & Entertainment</a></h4>
-            <h4><a href="./shop/stationary.php">Books & Stationary</a></h4>
+            <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
+            <h4><a href="./electronics.php">Electronics & Appliances</a></h4>
+            <h4><a href="./devices.php">Phones & Laptops</a></h4>
+            <h4><a href="./food.php">Food & Beverages</a></h4>
+            <h4><a href="./sports.php">Sports & Fitness</a></h4>
+            <h4><a href="./home.php">Home & Decor</a></h4>
+            <h4><a href="./entertainment.php">Gaming & Entertainment</a></h4>
+            <h4><a href="./stationary.php">Books & Stationary</a></h4>
         </div>
         <div class='container'>
             <?php
