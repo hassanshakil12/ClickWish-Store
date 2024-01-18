@@ -41,22 +41,20 @@
 }
 
 table{
+    width: 95vw;
+    text-align: center;
     background-color: white;
     font-size: 20px;
-    padding: 0.5vw;
-    border-radius: 25px;
+    border-radius: 5px;
+    table-layout: fixed;
 }
 
 table thead th{
     padding: 0.2vh 0.5vw;
 }
 
-table tr{
-    font-size: 20px;
-}
-
 table tr td{
-    padding: 2vh 5vw;
+    padding: 2vh 0.5vw;
 }
 
 .updateBtn{

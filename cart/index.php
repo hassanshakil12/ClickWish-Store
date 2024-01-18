@@ -34,11 +34,11 @@
                 while ($row = mysqli_fetch_array($data)) {
                     echo "
                     <tr>
-                        <td>$row[id]</td>
-                        <td>$row[name]</td>
-                        <td>$row[price]</td>
-                        <td>$row[category]</td>
-                        <td><a href='./cartDelete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
+                        <td style='width: 16%;'>$row[id]</td>
+                        <td style='width: 16%;'>$row[name]</td>
+                        <td style='width: 16%;'>$row[price]</td>
+                        <td style='width: 16%;'>$row[category]</td>
+                        <td style='width: 16%;'><a href='./cartDelete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
                     </tr>
                     ";
                 }

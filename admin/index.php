@@ -29,7 +29,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 </head>
 
 <body>
-    <?php include("navbar.php") ?>
+    <?php include("./navbar.php") ?>
     <div class="main">
         <center>
             <h1>Welcome To Admin Panel</h1>
@@ -71,6 +71,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             </table>
         </center>
     </div>
+    <?php include("./footer.php") ?>
 </body>
 
 </html>

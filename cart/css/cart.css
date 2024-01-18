@@ -16,18 +16,16 @@ table{
     font-size: 20px;
     padding: 0.5vw;
     border-radius: 5px;
+    text-align: center;
+    table-layout: fixed;
 }
 
 table thead th{
     padding: 0.2vh 0.5vw;
 }
 
-table tr{
-    font-size: 20px;
-}
-
 table tr td{
-    padding: 2vh 5vw;
+    padding: 2vh 0vw;
 }
 
 .deleteBtn{
