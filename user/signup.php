@@ -1,7 +1,6 @@
 <?php include("connection.php");?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="main">
         <form action="" method="post">
@@ -24,11 +22,11 @@
             <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
             <div class="gndr">
                 <div class="male">
-                    <input type="radio" name="gender" value="male">
+                    <input type="radio" name="gender" value="Male">
                     <p>Male</p>
                 </div>
                 <div class="female">
-                    <input type="radio" name="gender" value="female">
+                    <input type="radio" name="gender" value="Female">
                     <p>Female</p>
                 </div>
             </div>
@@ -44,16 +42,14 @@
                 <p>Accept all terms & conditions</p>
             </div>
             
-            <input type="submit" value="Register" class="btn" name="register">
+            <input type="submit" value="Register" class="btn" name="register"?>>
             <p>Already Have account? <a href="login.php">Login here</a></p>
         </form>
     </div>
 </body>
-
 </html>
 
 <?php 
-
 if(isset($_POST['register'])){
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -76,8 +72,9 @@ if(isset($_POST['register'])){
             if($data){
                 echo '
                 <div class="Success">
-                    <p><strong>Congratulations! </strong>Your Account has been created successfully with username: '.$username.'.</p>
+                    <p><strong>Congratulations! </strong>Your Account has been created successfully with username: ' . $username . '.</p>
                 </div>';
+                header("location: ./login.php");
             } else{
                 echo '
                 <div class="error">
