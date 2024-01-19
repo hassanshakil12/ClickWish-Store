@@ -2,7 +2,7 @@
 include("./connection.php");
 session_start();
 
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true || $_session['email'] != 'admin@admin.com') {
     header('location: ../user/login.php');
     $loggedIn = false;
 } else {
