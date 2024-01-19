@@ -6,11 +6,11 @@ if (isset($_POST['submit'])) {
     $productQuantity = $_POST['productQuantity'];
     $category = $_POST['category'];
 
-    // $productImage = $_FILES['productImage'];
-    // $productImageLocation = $_FILES['productImage']['tmp_name'];
-    // $productImageName = $_FILES['productImage']['name'];
+    $productImage = $_FILES['productImage'];
+    $productImageLocation = $_FILES['productImage']['tmp_name'];
+    $productImageName = $_FILES['productImage']['name'];
 
-    // move_uploaded_file($productImageLocation, "./product_images/".$productImageName);
+    move_uploaded_file($productImageLocation, "./product_images/".$productImageName);
 
     $query = "INSERT INTO `product_details`(`name`, `price`, `quantity`, `category`) VALUES ('$productName','$productPrice','$productQuantity','$category')";
 
