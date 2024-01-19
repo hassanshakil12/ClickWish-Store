@@ -27,7 +27,7 @@
         <div class='container'>
 
             <?php
-            $query = "SELECT * FROM `product_details`";
+            $query = "SELECT * FROM `product_details` ORDER BY name ASC";
             $data = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($data)) {
