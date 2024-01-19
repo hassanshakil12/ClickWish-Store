@@ -23,8 +23,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <h1>ClickWish</h1>
     </div>
     <div class="center">
-        <p><a href="index.php">Home</a></p>
-        <p class="shopBtn"><a href="./shop/index.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
+        <p><a href="../index.php">Home</a></p>
+        <p class="shopBtn"><a href="../shop/index.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
         <p>Contact</p>
         <p>About Us</p>
     </div>
@@ -43,9 +43,9 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             <h4>
                 <?php echo $_SESSION["username"]; ?>
             </h4>
-            <div class="pfp"><i class="ri-user-line"></i></div>
-            <div class="pfp"><a href="./cart/index.php"><i class="ri-shopping-cart-line"></i></a></div>
-            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
+            <div class="pfp"><a href="./profile.php"><i class="ri-user-line"></a></i></div>
+            <div class="pfp"><a href="../cart/index.php"><i class="ri-shopping-cart-line"></i></a></div>
+            <div class="logOut"><a href="./logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
 
@@ -53,8 +53,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     } else {
         ?>
         <div class="right">
-            <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
-            <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
+            <p class="logInBtn"><a href="./login.php">Log In</a></p>
+            <p class="signUpBtn"><a href="./signup.php">Sign Up</a></p>
         </div>
 
         <?php
