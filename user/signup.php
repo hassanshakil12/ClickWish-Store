@@ -32,6 +32,12 @@
                     <p>Female</p>
                 </div>
             </div>
+            
+            <select name="accountType">
+                <option selected>--Select Account Type--</option>
+                <option value="Buyer" name="accountType">Buyer</option>
+                <option value="Seller" name="accountType">Seller</option>
+            </select>
 
             <div class="terms">
                 <input type="checkbox" required>
@@ -56,6 +62,7 @@ if(isset($_POST['register'])){
 
     if($password == $confirmPassword){
         $gender = $_POST['gender'];
+        $accountType = $_POST['accountType'];
 
         $query = "SELECT * FROM user_data WHERE username = '$username' OR email = '$email'";
         $data = mysqli_query($conn, $query);
@@ -63,17 +70,26 @@ if(isset($_POST['register'])){
         if (mysqli_num_rows($data) > 0){
             echo "<script>alert('User Already Exists')</script>";
         } else {
-            $query = "INSERT INTO user_data(username, email, password, gender) VALUES('$username', '$email', '$password', '$gender')";
+            $query = "INSERT INTO `user_data`(`username`, `email`, `password`, `gender`, `accountType`) VALUES ('$username','$email','$password','$gender','$accountType')";
             $data = mysqli_query($conn, $query);
 
             if($data){
-                echo "<script>alert('Account Created Successfully')</script>";
+                echo '
+                <div class="Success">
+                    <p><strong>Congratulations! </strong>Your Account has been created successfully with username: '.$username.'.</p>
+                </div>';
             } else{
-                echo "<script>alert('Failed To Create Account')</script>";
+                echo '
+                <div class="error">
+                    <p><strong>Error! </strong>There occurs an error while creating you account.</p>
+                </div>';
             }
         }
     } else{
-        echo "<script>alert('Password not matched')</script>";
+        echo '
+        <div class="warning">
+            <p><strong>Warning! </strong>Passwords didn\'t matched.</p>
+        </div>';
     }
 }
 ?>

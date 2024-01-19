@@ -9,7 +9,7 @@ form{
     flex-direction: column;
     gap: 20px;
     padding: 40px;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
 }
 
 form h1{
@@ -57,6 +57,16 @@ form .gndr .female{
     gap: 10px;
 }
 
+form select{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
 form .terms{
     display: flex;
     justify-content: left;
@@ -97,6 +107,45 @@ form a{
 
 form a:hover{
     color: rgb(255, 255, 255);
+}
+
+.success{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(0, 210, 0, 0.8);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+}
+
+.error{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(210, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+}
+
+.warning{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(255, 210, 0, 0.8);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
 }
 
 @media (max-width: 500px){

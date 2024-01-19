@@ -53,8 +53,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     } else {
         ?>
         <div class="right">
-            <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
-            <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
+            <p class="logInBtn"><a href="../user/login.php">Log In</a></p>
+            <p class="signUpBtn"><a href="../user/signup.php">Sign Up</a></p>
         </div>
 
         <?php
