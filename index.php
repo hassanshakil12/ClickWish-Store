@@ -19,10 +19,11 @@
 </head>
 
 <body>
+    <?php include("navbar.php"); ?>
     <div class="main">
-        <?php include("navbar.php");?>
-        <?php include("content.php");?>
+        
     </div>
+    <?php include("content.php");?>
     <script src="script.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script> -->
 </body>
