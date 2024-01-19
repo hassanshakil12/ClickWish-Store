@@ -1,4 +1,4 @@
-<?php include("./connection.php") ?>
+<?php include("./connection.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include("navbar.php") ?>
+    <?php include("./navbar.php") ?>
     <div class="main">
         <div class="category">
             <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
@@ -25,33 +25,40 @@
             <h4><a href="./stationary.php">Books & Stationary</a></h4>
         </div>
         <div class='container'>
+
             <?php
             $query = "SELECT * FROM `product_details`";
             $data = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($data)) {
-                echo "
-            <div class='product'>
-                <div class='top'>
+            ?>
 
+            <div class="product">
+                <div class="top">
                 </div>
-                <div class='bottom'>
-                    <h1>$row[name]</h1>
-                    <div class='bottomBottom'>
-                        <p>$row[price] Rs</p>
-                        <div class='right'>
-                            <a href='../cart/insertCart.php? ID=$row[id]' class='right'><i class='ri-shopping-cart-line'></i></a>
-                            <a href='#'><i class='ri-heart-line'></i></a>
+                <div class="bottom">
+                    <h1><?php echo "$row[name]"?></h1>
+                    <div class="bottomBottom">
+                        <p><?php echo "$row[price]" ?>Rs</p>
+                        <div class="right">
+
+                            <?php if($loggedIn){?>
+                                <a href="../cart/insertCart.php? ID=<?php echo"$row[id]" ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
+                            <?php } else { ?>
+                                <a href="../user/login.php" class="right"><i class="ri-shopping-cart-line"></i></a>
+                            <?php } ?>
+
+                            <a href="#"><i class="ri-heart-line"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            ";
-            }
-            ?>
+
+            <?php } ?>
+
         </div>
     </div>
-    <?php include("footer.php") ?>
+    <?php include("./footer.php") ?>
 </body>
 
 </html>

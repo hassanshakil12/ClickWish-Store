@@ -16,7 +16,7 @@
             <img src="Assets/Slider/img2.jpg">
         </div>
         <div class="mySlides slide03">
-            <img src="Assets/Slider/img4.jpg">
+            <img src="Assets/Slider/img3.jpg">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
