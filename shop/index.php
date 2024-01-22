@@ -32,7 +32,7 @@
 
             while ($row = mysqli_fetch_array($data)) {
                 ?>
-                <a href="./page.php? ID=<?php echo md5(uniqid("$row[id]")) ?>">
+                <a href="./page.php? ID=<?php echo "$row[id]" ?>">
                     <div class="product">
                         <div class="top">
                         </div>

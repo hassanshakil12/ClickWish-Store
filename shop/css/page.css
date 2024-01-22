@@ -1,0 +1,138 @@
+.main{
+    padding-top: 9vh;
+    color: white;
+}
+
+.main .top{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    min-height: 50vh;
+}
+
+/* ----------left---------- */
+
+.main .top .left{
+    position: relative;
+    width: 35vw;
+    height: 60vh;
+    /* background-color: rgb(84, 20, 144); */
+    padding: 2vw;
+}
+
+.top .left .image{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.top .left .image img{
+    width: 100%;
+    height: 100%;
+    left: 100px;
+    object-fit: cover;
+}
+
+/* ----------Right---------- */
+
+.main .top .right{
+    width: 65vw;
+    height: 60vh;
+    border: 1px solid white;
+    padding: 2vw;
+}
+
+.top .right h1{
+    width: 100%;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.top .right h2{
+    width: 100%;
+    padding: 1vh 0;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.top .right .btn{
+    width: 100%;
+    padding: 1vh 0;
+    font-size: 30px;
+    font-weight: 500;
+    /* background-color: red; */
+}
+
+.top .right .btn input{
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 1.2vh 2.6vw;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.top .right .btn .buyBtn{
+    background-color: crimson;
+}
+
+.top .right .btn .cartBtn{
+    background-color: black;
+    border: 1px solid crimson;
+    color: crimson;
+}
+
+.main .top .right .stock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    border: 1px solid crimson;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.plus{
+    position: relative;
+    background-color: crimson;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.stockNumber{
+    width: 140px;
+    background-color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minus{
+    position: relative;
+    background-color: crimson;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.main .bottom{
+    position: relative;
+    width: 100vw;
+    min-height: 45.5vh;
+}
