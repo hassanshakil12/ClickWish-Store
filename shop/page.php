@@ -38,14 +38,16 @@ $row = mysqli_fetch_array($data);
                 <h2>Price:
                     <?php echo $row['price']; ?>Rs
                 </h2>
-                <!-- <input type="range"> -->
 
                 <div class="stock">
                     <div class="minus"><i class="ri-subtract-line"></i></div>
                     <div class="stockNumber">1</div>
                     <div class="plus"><i class="ri-add-line"></i></div>
                 </div>
-                <p class="warn" hidden>Out Of Stock</p>
+
+                <p class="warn warn1" hidden>Maximum in-Stock Quantity Reached!</p>
+                <p class="warn warn2" hidden>Less than 1 is not possible!</p>
+                <p class="warn warn3" hidden>Currently Out Of Stock!</p>
 
                 <script>
                     let stock = document.querySelector(".stockNumber");
@@ -53,38 +55,118 @@ $row = mysqli_fetch_array($data);
                     let minus = document.querySelector(".minus");
                     var num = 1;
 
-                    plus.addEventListener('click', function () {
-                        if (num < <?php echo $row['quantity']; ?>) {
-                            num++;
-                            stock.textContent = num;
-                        }
+                    if (<?php echo $row['quantity']; ?> <= 0) {
+                        $(".warn3").show();
+                    }
+                    else {
+                        plus.addEventListener('click', function () {
+                            if (num < <?php echo $row['quantity']; ?>) {
+                                $(".warn2").hide();
+                                num++;
+                                stock.textContent = num;
 
-                        else {
-                            // jQuery Part
+                            }
+                            else {
+                                $(".warn1").show();
+                                setTimeout(function () {
+                                    $(".warn1").hide();
+                                }, 3000)
+                            }
+                        })
+
+                        minus.addEventListener('click', function () {
+                            if (num > 1) {
+                                num--;
+                                stock.textContent = num;
                                 $(document).ready(function () {
-                                    $(".warn").show();
+                                    $(".warn1").hide();
                                 })
-                            // alert('Something went wrong!')
-                        }
-                    })
-
-                    minus.addEventListener('click', function () {
-                        if (num > 1) {
-                            num--;
-                            stock.textContent = num;
-                            $(document).ready(function () {
-                                $(".warn").hide();
-                            })
-                        } else {
-                            console.log('Invalid Operation')
-                        }
-                    })
+                            }
+                            else {
+                                $(".warn2").show();
+                                setTimeout(function () {
+                                    $(".warn2").hide();
+                                }, 3000)
+                            }
+                        })
+                    }
                 </script>
 
                 <div class="btn">
                     <input type="submit" value="Buy Now" class="buyBtn">
                     <input type="submit" value="Add To Cart" class="cartBtn">
                 </div>
+                <div class="stars">
+                    <i class="ri-star-fill star1"></i>
+                    <i class="ri-star-fill star2"></i>
+                    <i class="ri-star-fill star3"></i>
+                    <i class="ri-star-fill star4"></i>
+                    <i class="ri-star-fill star5"></i>
+                    <i class="feedback">()</i>
+                </div>
+                <p class="warn warn4" hidden>Feedback Already submitted!!</p>
+                
+                <?php
+                if($loggedIn == false){
+                ?>
+
+                <script>
+                    let starNum = 0;
+                    const starArray = [
+                        document.querySelector('.star1'), 
+                        document.querySelector('.star2'), 
+                        document.querySelector('.star3'), 
+                        document.querySelector('.star4'), 
+                        document.querySelector('.star5')
+                    ];
+
+                    starArray.forEach(star => {
+                        star.addEventListener('click', function(){
+                            window.location.href = '../user/login.php';
+                        })
+                    });
+                </script>
+
+                <?php
+                } 
+                else if($loggedIn == true){
+                ?>
+
+                <script>
+                    let feedbackNum = 0;
+                    let feedback = document.querySelector('.feedback');
+
+                    starNum = 0;
+                    starArray = [
+                        document.querySelector('.star1'), 
+                        document.querySelector('.star2'), 
+                        document.querySelector('.star3'), 
+                        document.querySelector('.star4'), 
+                        document.querySelector('.star5')
+                    ];
+
+                    for(let i = 0; i < starArray.length; i++){
+                        starArray[i].addEventListener('click', function(){
+                            if(starNum == 0){
+                                starNum = i+1;
+                                feedbackNum++;
+                                console.log(starNum);
+                                feedback.textContent = '( '+feedbackNum+' )';
+                            }
+                            else{
+                                $('.warn4').show();
+                                setTimeout(() => {
+                                    $('.warn4').hide();
+                                }, 3000);
+                            }         
+                        });
+                    }
+                </script>
+
+                <?php
+                }
+                ?>
+                
             </div>
         </div>
         <div class="bottom"></div>
