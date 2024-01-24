@@ -14,16 +14,7 @@
 <body>
     <?php include("./navbar.php") ?>
     <div class="main">
-        <div class="category">
-            <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
-            <h4><a href="./electronics.php">Electronics & Appliances</a></h4>
-            <h4><a href="./devices.php">Phones & Laptops</a></h4>
-            <h4><a href="./food.php">Food & Beverages</a></h4>
-            <h4><a href="./sports.php">Sports & Fitness</a></h4>
-            <h4><a href="./home.php">Home & Decor</a></h4>
-            <h4><a href="./entertainment.php">Gaming & Entertainment</a></h4>
-            <h4><a href="./stationary.php">Books & Stationary</a></h4>
-        </div>
+        <h1>Sports & Fitness.</h1>
         <div class='container'>
             <?php
             $query = "SELECT * FROM `product_details` ORDER BY name ASC";

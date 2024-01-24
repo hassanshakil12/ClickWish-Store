@@ -11,6 +11,14 @@
   gap: 4vh;
 }
 
+.main > h1{
+  color: grey;
+  width: 100vw;
+  padding: 0 2vw;
+  font-size: 70px;
+  font-weight: 400;
+}
+
 .container {
   height: auto;
   width: 100vw;
@@ -69,28 +77,9 @@
 }
 
 .product .bottomBottom .right{
-    width: 25%;
+    width: 70px;
     font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.main .category{
-  width: 100vw;
-  height: 6vh;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2vw;
-  border-bottom: 1px crimson solid;
-  border-top: 1px crimson solid;
-}
-
-.main .category a{
-  text-decoration: none;
-  color: crimson;
-  font-size: 23px;
-  font-weight: 400;
 }

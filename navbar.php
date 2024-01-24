@@ -23,7 +23,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     </div>
     <div class="center">
         <p><a href="index.php">Home</a></p>
-        <p class="shopBtn"><a href="./shop/index.php">Shop</a><!--<i class="ri-arrow-down-s-fill"></i>--></p>
+        <p class="shopBtn"><a href="./shop/index.php">Shop<i class="ri-arrow-down-s-fill"></i></a></p>
         <p>Contact</p>
         <p>About Us</p>
     </div>
@@ -44,13 +44,11 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         ?>
         <i class="ri-menu-fill menuBtn"></i>
 
-
-
     </div>
 
     <?php
     if ($loggedIn == true) {
-        ?>
+        ?>3
         <div class="right">
             <h4>
                 <?php echo $_SESSION["username"]; ?>
@@ -75,15 +73,106 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 
 </div>
 
+<div class="dropdown">
+    <section>
+        <h4><a href="./shop/fashion.php">Fashion & Clothing</a></h4>
+        <a href="./shop/fashion.php">Men Wear</a>
+        <a href="./shop/fashion.php">Women Wear</a>
+        <a href="./shop/fashion.php">Kids Wear</a>
+        <a href="./shop/fashion.php">Footwear</a>
+        <a href="./shop/fashion.php">Casual Wear</a>
+    </section>
+    <section>
+        <h4><a href="./shop/electronics.php">Electronics & Appliances</a></h4>
+        <a href="./shop/electronics.php">LED & Television</a>
+        <a href="./shop/electronics.php">Refrigerators</a>
+        <a href="./shop/electronics.php">Air Conditioners</a>
+        <a href="./shop/electronics.php">Kitchen Appliances</a>
+    </section>
+    <section>
+        <h4><a href="./shop/devices.php">Phones & Laptops</a></h4>
+        <a href="./shop/devices.php">Android Phones</a>
+        <a href="./shop/devices.php">Apple phones</a>
+        <a href="./shop/devices.php">Apple Macbooks</a>
+        <a href="./shop/devices.php">Windows Laptops</a>
+        <a href="./shop/devices.php">Laptop Accessories </a>
+    </section>
+    <section>
+        <h4><a href="./shop/food.php">Food & Beverages</a></h4>
+        <a href="./shop/food.php">Cold Drinks</a>
+        <a href="./shop/food.php">Meat</a>
+        <a href="./shop/food.php">Wheat</a>
+        <a href="./shop/food.php">Dairy Products</a>
+    </section>
+    <section>
+        <h4><a href="./shop/sports.php">Sports & Fitness</a></h4>
+        <a href="./shop/sports.php">Cricket</a>
+        <a href="./shop/sports.php">Football</a>
+        <a href="./shop/sports.php">Table Tennis</a>
+        <a href="./shop/sports.php">Basket Ball</a>
+        <a href="./shop/sports.php">Indoor Games</a>
+        <a href="./shop/sports.php">Gym Equipment</a>
+    </section>
+    <section>
+        <h4><a href="./shop/home.php">Home & Decor</a></h4>
+        <a href="./shop/home.php">Furniture</a>
+        <a href="./shop/home.php">Carpets</a>
+        <a href="./shop/home.php">Lights</a>
+        <a href="./shop/home.php">Wall Decor</a>
+        <a href="./shop/home.php">Plants</a>
+    </section>
+    <section>
+        <h4><a href="./shop/entertainment.php">Gaming & Entertainment</a></h4>
+        <a href="./shop/entertainment.php">Playstation 5</a>
+        <a href="./shop/entertainment.php">Xbox One</a>
+        <a href="./shop/entertainment.php">Gaming Controllers</a>
+        <a href="./shop/entertainment.php">Blu-ray Disks</a>
+        <a href="./shop/entertainment.php">Gaming PC</a>
+        <a href="./shop/entertainment.php">Computer Accessories</a>
+    </section>
+    <section>
+        <h4><a href="./shop/stationary.php">Books & Stationary</a></h4>
+        <a href="./shop/stationary.php">Novels</a>
+        <a href="./shop/stationary.php">Motivational Books</a>
+        <a href="./shop/stationary.php">Painting</a>
+        <a href="./shop/stationary.php">Pen & Pencils</a>
+        <a href="./shop/stationary.php">School Books</a>
+    </section>
+</div>
+
+<script>
+    let shopBtn = document.querySelector('.navbar .shopBtn');
+    let dropdown = document.querySelector('.dropdown');
+    let count = 0;
+
+    shopBtn.addEventListener('mouseover', function () {
+        if (count == 0) {
+            count++;
+            dropdown.style.zIndex = 9;
+            dropdown.style.opacity = 1;
+        }
+    })
+
+    dropdown.addEventListener('mouseleave', function () {
+        if (count > 0) {
+            count = 0;
+            dropdown.style.zIndex = 0;
+            dropdown.style.opacity = 0;
+        }
+    })
+</script>
+
 <div class="sideMenu" hidden>
     <div class="top">
         <p><a href="./index.php">Home</a></p>
-        <p><a href="./shop/index.php">Shop</a></p>
+        <p class="sideMenuShopBtn"><a href="#">Shop<i class="ri-arrow-down-s-fill"></i></a></p>
         <p><a href="">Contact Us</a></p>
         <p><a href="">About Us</a></p>
 
         <?php if ($loggedIn == true) { ?>
-            <p class="pfp"><a href="./user/profile.php"><?php echo $_SESSION["username"]; ?> <i class="ri-user-line"></i></a></p>
+            <p class="pfp"><a href="./user/profile.php">
+                    <?php echo $_SESSION["username"]; ?> <i class="ri-user-line"></i>
+                </a></p>
         <?php } ?>
 
     </div>
@@ -106,22 +195,40 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         ?>
     </div>
 </div>
+<div class="sideMenuShop">
+    <i class="ri-arrow-left-line close"></i>
+    <a href="./shop/fashion.php">Fashion & Clothing</a>
+    <a href="./shop/electronics.php">Electronics & Appliances</a>
+    <a href="./shop/devices.php">Phones & Laptops</a>
+    <a href="./shop/food.php">Food & Beverages</a>
+    <a href="./shop/sports.php">Sports & Fitness</a>
+    <a href="./shop/home.php">Home & Decor</a>
+    <a href="./shop/entertainment.php">Gaming & Entertainment</a>
+    <a href="./shop/stationary.php">Books & Stationary</a>
+</div>
 
 <script>
+    let click = 0;
+    let num = 0;
     const responsiveSideMenu = () => {
         let menuBtn = document.querySelector('.navbar .menuLogo .menuBtn');
         var sideMenu = document.querySelector('.sideMenu');
-        let click = 0;
+        let sideMenuShop = document.querySelector('.sideMenuShop');
 
         menuBtn.addEventListener('click', function () {
-            if (click == 0) {
-                click--;
+            if(num > 0){
+                num = 0;
+                sideMenuShop.style.zIndex = 0;
+                sideMenuShop.style.opacity = 0;
+            }
+            else if (click == 0) {
+                click=1;
                 sideMenu.style.display = 'block';
                 sideMenu.style.opacity = 1;
                 sideMenu.style.zIndex = 9;
             }
             else {
-                click++;
+                click=0;
                 sideMenu.style.display = 'none';
                 sideMenu.style.opacity = 0;
                 sideMenu.style.zIndex = 0;
@@ -129,5 +236,36 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         })
     }
 
+    const sideMenuShop = () => {
+        let sideMenuShopBtn = document.querySelector('.sideMenuShopBtn');
+        let sideMenuShop = document.querySelector('.sideMenuShop');
+        let sideMenu =document.querySelector('.sideMenu')
+        let close = document.querySelector('.close')
+
+        sideMenuShopBtn.addEventListener('click', function () {
+            if (num == 0) {
+                num = 1;
+                click = 0;
+                console.log('hello');
+                sideMenuShop.style.zIndex = 9;
+                sideMenuShop.style.opacity = 1;
+                sideMenu.style.zIndex = 0;
+                sideMenu.style.opacity = 0;
+            }
+        })
+
+        close.addEventListener('click', function(){
+            if(num > 0){
+                num = 0;
+                click = 1;
+                sideMenuShop.style.zIndex = 0;
+                sideMenuShop.style.opacity = 0;
+                sideMenu.style.zIndex = 9;
+                sideMenu.style.opacity = 1;
+            }
+        })
+    }
+
+    sideMenuShop();
     responsiveSideMenu();
 </script>

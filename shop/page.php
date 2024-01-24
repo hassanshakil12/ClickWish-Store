@@ -53,17 +53,17 @@ $row = mysqli_fetch_array($data);
                     let stock = document.querySelector(".stockNumber");
                     let plus = document.querySelector(".plus");
                     let minus = document.querySelector(".minus");
-                    var num = 1;
+                    var number = 1;
 
                     if (<?php echo $row['quantity']; ?> <= 0) {
                         $(".warn3").show();
                     }
                     else {
                         plus.addEventListener('click', function () {
-                            if (num < <?php echo $row['quantity']; ?>) {
+                            if (number < <?php echo $row['quantity']; ?>) {
                                 $(".warn2").hide();
-                                num++;
-                                stock.textContent = num;
+                                number++;
+                                stock.textContent = number;
 
                             }
                             else {
@@ -75,9 +75,9 @@ $row = mysqli_fetch_array($data);
                         })
 
                         minus.addEventListener('click', function () {
-                            if (num > 1) {
-                                num--;
-                                stock.textContent = num;
+                            if (number > 1) {
+                                number--;
+                                stock.textContent = number;
                                 $(document).ready(function () {
                                     $(".warn1").hide();
                                 })
