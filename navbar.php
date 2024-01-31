@@ -48,7 +48,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 
     <?php
     if ($loggedIn == true) {
-        ?>3
+        ?>
         <div class="right">
             <h4>
                 <?php echo $_SESSION["username"]; ?>

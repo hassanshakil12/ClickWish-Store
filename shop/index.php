@@ -14,44 +14,44 @@
 <body>
     <?php include("./navbar.php") ?>
     <div class="main">
-        <h1>Shop</h1>
+        <h1>Shop.</h1>
         <div class='container'>
             <?php
             $query = "SELECT * FROM `product_details` ORDER BY name ASC";
             $data = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($data)) {
-                ?>
+            ?>
                 <a href="./page.php? ID=<?php echo "$row[id]" ?>">
                     <div class="product">
                         <div class="top">
                         </div>
                         <div class="bottom">
-                            <h1>
-                                <?php echo "$row[name]" ?>
-                            </h1>
+                            <h1><?php echo "$row[name]" ?></h1>
                             <div class="bottomBottom">
-                                <p>
-                                    <?php echo "$row[price]" ?>Rs
-                                </p>
+                                <p><?php echo "$row[price]" ?>Rs</p>
                                 <div class="right">
-
-                                    <?php if ($loggedIn) { ?>
-                                        <a href="../cart/insertCart.php? ID=<?php echo "$row[id]" ?>" class="right"><i
-                                                class="ri-shopping-cart-line"></i></a>
-                                    <?php } else { ?>
+                                    <?php 
+                                    if ($loggedIn) { 
+                                    ?>
+                                        <a href="../cart/insertCart.php? ID=<?php echo "$row[id]" ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
+                                    <?php 
+                                    } 
+                                    else { 
+                                    ?>
                                         <a href="../user/login.php" class="right"><i class="ri-shopping-cart-line"></i></a>
-                                    <?php } ?>
-
+                                    <?php 
+                                    } 
+                                    ?>
                                     <a href="#"><i class="ri-heart-line"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
-
-            <?php } ?>
-
+            <?php 
+            } 
+            ?>
         </div>
     </div>
     <?php include("./footer.php") ?>

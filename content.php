@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="aboutUs" id="aboutUs">
-        <h1>About Us</h1>
+        <h1>About Us.</h1>
         <div class="details">
             <div class="image">
                 <img src="./Assets/Images/img1.jpg" alt="About Us">

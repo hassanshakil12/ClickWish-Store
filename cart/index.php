@@ -14,10 +14,7 @@
 <body>
     <?php include("./navbar.php") ?>
     <div class="main">
-        <center>
-            <h1>Cart</h1>
-        </center>
-
+        <h1>Cart.</h1>
         <center>
             <table>
                 <thead>
@@ -34,7 +31,7 @@
                 while ($row = mysqli_fetch_array($data)) {
                     echo "
                     <tr>
-                        <td style='width: 16%;'>$row[id]</td>
+                        <td style='width: 16%;'>$row[product_id]</td>
                         <td style='width: 16%;'>$row[name]</td>
                         <td style='width: 16%;'>$row[price]</td>
                         <td style='width: 16%;'>$row[category]</td>

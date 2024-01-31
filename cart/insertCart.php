@@ -7,7 +7,7 @@ $data = mysqli_query($conn, $query);
 
 $row = mysqli_fetch_array($data);
 
-$query2 = "INSERT INTO `cart_details`(`name`, `price`, `category`) VALUES ('$row[name]','$row[price]','$row[category]')";
+$query2 = "INSERT INTO `cart_details`(`product_id`, `name`, `price`, `category`) VALUES ('$row[id]', '$row[name]','$row[price]','$row[category]')";
 mysqli_query($conn, $query2);
 
 header("location: index.php");

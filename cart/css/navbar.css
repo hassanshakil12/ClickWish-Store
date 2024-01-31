@@ -131,91 +131,181 @@
   font-weight: 400;
 }
 
-.sideMenu {
-  position: absolute;
+.dropdown{
+  top: 9vh;
+  width: 100vw;
+  height: auto;
+  background-color: gray;
+  z-index: -1;
+  position: fixed;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 2vw;
   background-color: rgba(220, 20, 60, 0.75);
   backdrop-filter: blur(10px);
-  height: calc(100vh - 9vh);
-  z-index: 99;
+  opacity: 0;
+}
+
+.dropdown a{
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown h4{
+  color: black;
+  font-size: 23px;
+  margin-bottom: 2vh;
+}
+
+.dropdown section{
+  width: fit-content;
+  height: fit-content;
+  font-size: 23px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1vh;
+}
+
+.sideMenu {
+  position: fixed;
+  background-color: rgba(220, 20, 60, 0.75);
+  backdrop-filter: blur(10px);
+  min-height: calc(100vh - 9vh);
   bottom: 0;
   right: 0;
   padding: 5vw;
-  box-shadow: 1px 1px 10px black;
-  transition: all ease 0.5s;
   opacity: 0;
   display: none;
-  width: none;
-}
-
-.sideMenu > p {
-  font-size: 25px;
-  cursor: pointer;
-  width: fit-content;
-  margin-bottom: 2vh;
-}
-
-.sideMenu .shopMenu {
-  background-color: rgb(220, 40, 70);
-  border-radius: 7px;
-  margin-bottom: 2vh;
-  transition: all ease 0.35s;
-  padding: 1vw 5vw;
-  display: none;
-}
-
-.shopMenu p {
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.shopMenu p:not(:last-child) {
-  margin-bottom: 1.5vh;
-}
-
-.dropdown {
-  top: 9vh;
-  width: 100vw;
-  height: 28vh;
-  background-color: rgba(111, 111, 111, 0.75);
-  position: fixed;
-  opacity: 0;
-  transition: all ease 0.35s;
-  z-index: 10;
-}
-
-.dropdown .category {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 4vw;
-  padding: 2vh 0;
-}
-
-.dropdown .section {
-  width: fit-content;
+  width: 55vw;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
-  position: relative;
+  justify-content: space-between;
+  align-items: start;
+  z-index: -1;
 }
 
-.dropdown .section h4 {
-  font-size: 18px;
-  font-weight: 500;
+.sideMenu a{
+  color: black;
+  text-decoration: none;
 }
 
-.dropdown .section p {
+.sideMenu .top{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40vh;
+}
+
+.sideMenu .top p a{
+  color: black;
+  font-size: 25px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 400;
+  text-decoration: none;
 }
 
-.dropdown h4 {
-  font-size: 18px;
-  font-weight: 400;
+.sideMenu .bottom{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
+
+.sideMenu .bottom p {
+  font-size: 25px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sideMenu .logInBtn a{
+  color: black;
+  text-decoration: none;
+}
+
+.sideMenu .logInBtn{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1vh 5vw;
+  margin-top: 5vh;
+}
+
+.sideMenu .signUpBtn a{
+  color: crimson;
+  text-decoration: none;
+}
+
+.sideMenu .signUpBtn{
+  background-color: black;
+  border-radius: 5px;
+  padding: 1vh 5vw;
+}
+
+.sideMenu .logOutBtn a{
+  color: crimson;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.sideMenu .logOutBtn{
+  margin-top: 10vh;
+  background-color: black;
+  border-radius: 5px;
+  padding: 1vh 5vw;
+}
+
+.sideMenuShop{
+  position: fixed;
+  width: 60vw;
+  height: 100%;
+  background-color: gray;
+  top: 9vh;
+  right: 0;
+  padding: 5vw;
+  font-size: 20px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2vh;
+  background-color: rgba(220, 20, 60, 0.75);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  z-index: -1;
+}
+
+.sideMenuShop a{
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+.sideMenuShop i{
+  position: relative;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   .navbar .center,
@@ -229,24 +319,9 @@
     width: auto;
   }
 
-  .navbar .searchField{
-    top: 0;
-    opacity: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar .searchField input{
-    opacity: 0.8;
-  }
-
-  .main .sideMenu{
-    width: 45vw;
-  }
-
-  .main .sideMenu .shopMenu{
-    padding: 2vh;
+  .navbar .menuLogo a{
+    color: black; 
+    text-decoration: none;
   }
 }
 
@@ -261,24 +336,5 @@
 
   .navbar .menuLogo {
     display: block;
-  }
-
-  .navbar .searchField {
-    top: auto;
-    opacity: 1;
-  }
-  .main .dropdown {
-    display: none;
-    width: 100vw;
-  }
-
-  .main .sideMenu{
-    width: 55vw;
-  }
-}
-
-@media (max-width: 375px){
-  .navbar .searchField{
-    display: none;
   }
 }

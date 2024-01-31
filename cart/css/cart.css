@@ -1,17 +1,21 @@
 .main{
     width: 100vw;
     min-height: 100vh;
-    padding-top: 15vh;
+    padding-top: 13vh;
     background-color: black;
     color: white;
 }
 
 .main h1{
-    font-size: 50px;
+    font-size: 70px;
+    font-weight: 400;
+    color: grey;
+    padding: 0 2vw;
+    margin-bottom: 40px;
 }
 
 table{
-    width: 80vw;
+    width: 90vw;
     background-color: white;
     font-size: 20px;
     padding: 0.5vw;
