@@ -65,7 +65,7 @@
             <h1>LOGIN</h1>
             <input type="email" class="textBox" name="email" placeholder="Enter Email" required>
             <input type="password" class="textBox" name="password" placeholder="Enter password" required>
-            <p class="forgetPword"><a href="#">Forget Password</a></p>
+            <p class="forgetPword"><a href="./forgetpassword.php">Forget Password</a></p>
 
             <input type="submit" class="btn" value="Log In" name="login">
             <p>Not Yet Registered? <a href="signup.php">Create Account</a></p>
