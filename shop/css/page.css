@@ -258,7 +258,7 @@
     cursor: pointer;
 }
 
-.bottom .productSection {
+.bottom .latestProducts {
     width: 100%;
     height: auto;
     /* background-color: green; */
@@ -266,26 +266,26 @@
     position: relative;
 }
 
-.productSection h4 {
+.latestProducts h4 {
     font-size: 50px;
     font-weight: 400;
     color: grey;
     padding: 0 0 1vw 0;
 }
 
-.productSection .container {
+.latestProducts .container {
     height: auto;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    padding: 1vw;
+    padding: 1.5vw;
     background-color: crimson;
     margin-left: -2vw;
 }
 
-.productSection .container .product {
+.product {
     height: 550px;
     width: 357px;
     background-color: black;
@@ -300,13 +300,13 @@
     color: rgb(0, 0, 0);
 }
 
-.product .top {
+.product .top2 {
     background-color: rgb(64, 84, 84);
     width: 100%;
     height: 70%;
 }
 
-.product .bottom {
+.product .bottom2 {
     background-color: rgb(255, 228, 209);
     width: 100%;
     height: 30%;
@@ -316,7 +316,7 @@
     justify-content: space-between;
 }
 
-.product .bottom .bottomBottom {
+.product .bottom2 .bottomBottom2 {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -325,12 +325,12 @@
     padding-bottom: 7px;
 }
 
-.product .bottomBottom p {
+.product .bottomBottom2 p {
     width: 75%;
     font-size: 30px;
 }
 
-.product .bottomBottom .right {
+.product .bottomBottom2 .right {
     width: 70px;
     font-size: 30px;
     display: flex;

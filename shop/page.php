@@ -222,7 +222,7 @@ $row = mysqli_fetch_array($data);
                     </form>
                 </div>
             </div>
-            <div class="productSection">
+            <div class="latestProducts">
                 <h4>Latest Products.</h4>
                 <div class='container'>
                     <?php
@@ -233,10 +233,10 @@ $row = mysqli_fetch_array($data);
                     ?>
                     <a href="./page.php? ID=<?php echo "$row[id]" ?>">
                     <div class="product">
-                        <div class="top"></div>
-                        <div class="bottom">
+                        <div class="top2"></div>
+                        <div class="bottom2">
                             <h1><?php echo "$row[name]" ?></h1>
-                            <div class="bottomBottom">
+                            <div class="bottomBottom2">
                                 <p><?php echo "$row[price]" ?>Rs</p>
                                 <div class="right">
                                     <?php if ($loggedIn) {?>
