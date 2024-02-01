@@ -92,8 +92,18 @@ $row = mysqli_fetch_array($data);
                 </script>
 
                 <div class="btn">
+                    <?php if($loggedIn){
+                    ?>
                     <input type="submit" value="Buy Now" class="buyBtn">
-                    <input type="submit" value="Add To Cart" class="cartBtn">
+                    <a href="../cart/insertCart.php? ID='<?php echo $row['id']?>'"><input type="submit" value="Add To Cart" class="cartBtn"></a>
+                    <?php
+                    }
+                    else{
+                    ?>
+                    <a href="../user/login.php"><input type="submit" value="Buy Now" class="buyBtn"></a>
+                    <a href="../user/login.php"><input type="submit" value="Add To Cart" class="cartBtn"></a>
+                    <?php
+                    }?>
                 </div>
                 <div class="stars">
                     <i class="ri-star-fill star1"></i>
