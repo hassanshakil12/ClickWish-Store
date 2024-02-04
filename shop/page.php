@@ -1,6 +1,14 @@
 <?php
 include('./connection.php');
 
+session_start();
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+    $loggedIn = false;
+} else {
+    $loggedIn = true;
+}
+
 $id = $_GET['ID'];
 
 $query = "SELECT * FROM `product_details` WHERE id='$id'";

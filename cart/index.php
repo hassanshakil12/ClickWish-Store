@@ -1,4 +1,15 @@
-<?php include("./connection.php"); ?>
+<?php 
+include("./connection.php");
+session_start();
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+    $loggedIn = false;
+} else {
+    $loggedIn = true;
+}
+
+$userId = $_SESSION['id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +29,14 @@
         <center>
             <table>
                 <thead>
-                    <th>Sr No</th>
+                    <th>Product Id</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
                     <th>Delete</th>
                 </thead>
                 <?php
-                $query = "SELECT * FROM `cart_details`";
+                $query = "SELECT * FROM `cart_details` WHERE user_id = '$userId'";
                 $data = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_array($data)) {

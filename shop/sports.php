@@ -1,4 +1,12 @@
-<?php include("./connection.php"); ?>
+<?php include("./connection.php"); 
+session_start();
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
+    $loggedIn = false;
+} else {
+    $loggedIn = true;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

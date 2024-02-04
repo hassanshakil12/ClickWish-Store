@@ -1,12 +1,4 @@
-<?php include("../user/connection.php");
-session_start();
-
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-    $loggedIn = false;
-} else {
-    $loggedIn = true;
-}
-?>
+<?php include("../user/connection.php"); ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
