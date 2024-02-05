@@ -10,12 +10,18 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 }
 
 $id = $_GET['ID'];
+$qty = 1;
+$_SESSION['qty'] = $qty;
+
 
 $query = "SELECT * FROM `product_details` WHERE id='$id'";
 $data = mysqli_query($conn, $query);
 
 $row = mysqli_fetch_array($data);
 ?>
+<script>
+    console.log("<?php echo $_SESSION['qty']; ?>");
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +77,7 @@ $row = mysqli_fetch_array($data);
                                 $(".warn2").hide();
                                 number++;
                                 stock.textContent = number;
-
+                                <?php $qty = $qty + 1; ?>
                             }
                             else {
                                 $(".warn1").show();
@@ -85,6 +91,7 @@ $row = mysqli_fetch_array($data);
                             if (number > 1) {
                                 number--;
                                 stock.textContent = number;
+                                <?php $qty = $qty-1; ?>
                                 $(document).ready(function () {
                                     $(".warn1").hide();
                                 })

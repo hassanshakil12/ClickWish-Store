@@ -7,8 +7,6 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 } else {
     $loggedIn = true;
 }
-
-$userId = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +29,7 @@ $userId = $_SESSION['id'];
                 <thead>
                     <th>Product Id</th>
                     <th>Name</th>
+                    <th>Quantity</th>
                     <th>Price</th>
                     <th>Category</th>
                     <th>Delete</th>
@@ -42,11 +41,12 @@ $userId = $_SESSION['id'];
                 while ($row = mysqli_fetch_array($data)) {
                     echo "
                     <tr>
-                        <td style='width: 16%;'>$row[product_id]</td>
-                        <td style='width: 16%;'>$row[name]</td>
-                        <td style='width: 16%;'>$row[price]</td>
-                        <td style='width: 16%;'>$row[category]</td>
-                        <td style='width: 16%;'><a href='./cartDelete.php? ID=$row[id]' class='deleteBtn'>Delete</a></td>
+                        <td style='width: 13.33%;'>".$row['product_id']."</td>
+                        <td style='width: 13.33%;'>".$row['name']."</td>
+                        <td style='width: 13.33%;'>".$_SESSION['qty']."</td>
+                        <td style='width: 13.33%;'>".$row['price']."</td>
+                        <td style='width: 13.33%;'>".$row['category']."</td>
+                        <td style='width: 13.33%;'><a href='./cartDelete.php? ID=".$row['id']."' class='deleteBtn'>Delete</a></td>
                     </tr>
                     ";
                 }
@@ -55,6 +55,9 @@ $userId = $_SESSION['id'];
         </center>
     </div>
     <?php include("./footer.php") ?>
+    <script>
+        console.log("<?php echo $_SESSION['qty'];?>")
+    </script>
 </body>
 
 </html>
