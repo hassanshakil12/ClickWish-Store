@@ -76,7 +76,7 @@
 
             <input type="submit" class="btn" value="Log In" name="login">
             <p>Not Yet Registered? <a href="signup.php">Create Account</a></p>
-            <p>Sign In as Seller: <a href="../seller/login.php">Sign In</a></p>
+            <p>Login as Seller: <a href="../seller/login.php">Log In</a></p>
         </form>
     </div>
     <script>
