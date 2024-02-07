@@ -25,6 +25,7 @@
             <input type="password" name="password" placeholder="Enter Password" required>
             <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
             <input type="tel" name="phoneNo" placeholder="Enter Phone No." required>
+            <input type="text" name="location" placeholder="Enter location" required>
             <div class="gndr">
                 <div class="male">
                     <input type="radio" name="gender" value="Male">
@@ -69,39 +70,18 @@ if (isset($_POST['register'])) {
 
     if ($password == $confirmPassword) {
         $phoneNo = $_POST['phoneNo'];
+        $location = $_POST['location'];
         $gender = $_POST['gender'];
         $accountType = $_POST['accountType'];
 
-        $query = "SELECT * FROM user_data WHERE username = '$username' OR email = '$email' OR phoneNo = '$phoneNo'";
-        $data = mysqli_query($conn, $query);
-
-        if (mysqli_num_rows($data) > 0) { 
-            ?>
-            <div class="error">
-                <p><strong>Error! </strong>User Already Exists.</p>
-            </div>
-            <script>
-                $(".error").show();
-                setTimeout(function() {
-                    $(".error").fadeOut();
-                }, 5000);
-            </script>
-            <?php
-        } else {
-            $query = "INSERT INTO `user_data`(`username`, `email`, `password`, `phoneNo`, `gender`, `accountType`) VALUES ('$username','$email','$password','$phoneNo','$gender','$accountType')";
+        if($accountType == "Buyer"){
+            $query = "SELECT * FROM user_data WHERE username = '$username' OR email = '$email' OR phoneNo = '$phoneNo'";
             $data = mysqli_query($conn, $query);
 
-            if ($data) {
-                echo '
-                <div class="Success">
-                    <p><strong>Congratulations! </strong>Your Account has been created successfully with username: ' . $username . '.</p>
-                </div>';
-                header("location: ./login.php");
-            } 
-            else {
-                ?>
+            if (mysqli_num_rows($data) > 0) { 
+            ?>
                 <div class="error">
-                    <p><strong>Error! </strong>There occurs an error while creating you account.</p>
+                    <p><strong>Error! </strong>User Already Exists.</p>
                 </div>
                 <script>
                     $(".error").show();
@@ -109,7 +89,73 @@ if (isset($_POST['register'])) {
                         $(".error").fadeOut();
                     }, 5000);
                 </script>
+            <?php
+            } else {
+                $query = "INSERT INTO `user_data`(`username`, `email`, `password`, `phoneNo`, `gender`, `accountType`, `location`) VALUES ('$username','$email','$password','$phoneNo','$gender','$accountType','$location')";
+                $data = mysqli_query($conn, $query);
+
+                if ($data) {
+                    echo '
+                    <div class="Success">
+                        <p><strong>Congratulations! </strong>Your Account has been created successfully with username: ' . $username . '.</p>
+                    </div>';
+                    header("location: ./login.php");
+                } 
+                else {
+                ?>
+                    <div class="error">
+                        <p><strong>Error! </strong>There occurs an error while creating you account.</p>
+                    </div>
+                    <script>
+                        $(".error").show();
+                        setTimeout(function() {
+                            $(".error").fadeOut();
+                        }, 5000);
+                    </script>
                 <?php
+                }
+            }
+        }
+        else if($accountType == "Seller"){
+            $query = "SELECT * FROM seller_data WHERE username = '$username' OR email = '$email' OR phoneNo = '$phoneNo'";
+            $data = mysqli_query($conn, $query);
+
+            if (mysqli_num_rows($data) > 0) { 
+            ?>
+                <div class="error">
+                    <p><strong>Error! </strong>User Already Exists.</p>
+                </div>
+                <script>
+                    $(".error").show();
+                    setTimeout(function() {
+                        $(".error").fadeOut();
+                    }, 5000);
+                </script>
+            <?php
+            } else {
+                $query = "INSERT INTO `seller_data`(`username`, `email`, `password`, `phoneNo`, `gender`, `accountType`, `location`) VALUES ('$username','$email','$password','$phoneNo','$gender','$accountType','$location')";
+                $data = mysqli_query($conn, $query);
+
+                if ($data) {
+                    echo '
+                    <div class="Success">
+                        <p><strong>Congratulations! </strong>Your Account has been created successfully with username: ' . $username . '.</p>
+                    </div>';
+                    header("location: ./login.php");
+                } 
+                else {
+                ?>
+                    <div class="error">
+                        <p><strong>Error! </strong>There occurs an error while creating you account.</p>
+                    </div>
+                    <script>
+                        $(".error").show();
+                        setTimeout(function() {
+                            $(".error").fadeOut();
+                        }, 5000);
+                    </script>
+                <?php
+                }
             }
         }
     } 

@@ -30,7 +30,7 @@
                 $_SESSION["loggedIn"] = true;
                 header("location: ../admin/index.php");
             } else {
-                $userQuery = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
+                $userQuery = "SELECT * FROM seller_data WHERE email = '$email' AND password = '$password'";
                 $data = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($data) > 0) {
@@ -49,7 +49,7 @@
                     $_SESSION["gender"] = $gender;
                     $_SESSION["id"] = $userId;
 
-                    header("location: ../index.php");
+                    header("location: ./index.php");
                 } 
                 else {
                     ?>
@@ -76,7 +76,6 @@
 
             <input type="submit" class="btn" value="Log In" name="login">
             <p>Not Yet Registered? <a href="signup.php">Create Account</a></p>
-            <p>Sign In as Seller: <a href="../seller/login.php">Sign In</a></p>
         </form>
     </div>
     <script>

@@ -1,0 +1,96 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background-color: crimson;
+    width: 32em;
+    height: 40em;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    padding-bottom: 120px;
+}
+
+form h1{
+    font-size: 70px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+form .btn{
+    background-color: black;
+    color: white;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+form .btn:hover{
+    background-color: rgb(0, 150, 50);
+}
+
+form .forgetPword{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 5px;
+}
+
+form p{
+    font-size: 20px;
+}
+
+form a{
+    text-decoration: none;
+    color: rgb(0, 0, 164);
+    transition: all ease 0.3s;
+}
+
+form a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.error{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgb(255, 0, 0);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+}
+
+.error strong{
+    font-weight: 900;
+}
+
+@media (max-width: 500px){
+    form{
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
