@@ -189,7 +189,15 @@ $row = mysqli_fetch_array($data);
                     <?php
                 }
                 ?>
-
+                <div class="sellerInfo">
+                    <h4>Seller:</h4>
+                    <div class="profile">
+                        <div class="avatar">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                        <h4>Muhammad Hassan</h4>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="bottom">

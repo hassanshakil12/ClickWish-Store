@@ -138,9 +138,38 @@
     cursor: pointer;
 }
 
+/* ---------------Seller Info--------------- */
 
+.main .top .right .sellerInfo{
+    /* background-color: red; */
+    width: fit-content;
+    margin-top: 10px;
+}
 
+.sellerInfo h4{
+    font-size: 20px;
+    font-weight: 400;
+}
 
+.sellerInfo .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.profile .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: black;
+}
 
 /* ---------------Bottom--------------- */
 
