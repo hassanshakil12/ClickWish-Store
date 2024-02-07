@@ -30,7 +30,7 @@
                 $_SESSION["loggedIn"] = true;
                 header("location: ../admin/index.php");
             } else {
-                $userQuery = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
+                $query = "SELECT * FROM user_data WHERE email = '$email' AND password = '$password'";
                 $data = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($data) > 0) {
@@ -75,8 +75,10 @@
             <p class="forgetPword"><a href="./forgetpassword.php">Forget Password</a></p>
 
             <input type="submit" class="btn" value="Log In" name="login">
-            <p>Not Yet Registered? <a href="signup.php">Create Account</a></p>
-            <p>Login as Seller: <a href="../seller/login.php">Log In</a></p>
+            <div class="others">
+                <p>Not Yet Registered? <a href="signup.php">Create Account</a></p>
+                <p>Login as Seller: <a href="../seller/login.php">Log In</a></p>
+            </div>
         </form>
     </div>
     <script>

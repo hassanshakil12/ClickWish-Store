@@ -12,8 +12,8 @@
         <h1>ClickWish</h1>
     </div>
     <div class="center">
-        <p><a href="../index.php">Home</a></p>
-        <p class="shopBtn"><a href="./index.php">Shop<i class="ri-arrow-down-s-fill"></i></a></p>
+        <p><a href="./index.php">Home</a></p>
+        <p class="shopBtn"><a href="./product.php">Products</a></p>
         <p>Contact</p>
         <p>About Us</p>
     </div>
@@ -61,73 +61,6 @@
     }
     ?>
 
-</div>
-
-<div class="dropdown">
-    <section>
-        <h4><a href="./fashion.php">Fashion & Clothing</a></h4>
-        <a href="./fashion.php">Men Wear</a>
-        <a href="./fashion.php">Women Wear</a>
-        <a href="./fashion.php">Kids Wear</a>
-        <a href="./fashion.php">Footwear</a>
-        <a href="./fashion.php">Casual Wear</a>
-    </section>
-    <section>
-        <h4><a href="./electronics.php">Electronics & Appliances</a></h4>
-        <a href="./electronics.php">LED & Television</a>
-        <a href="./electronics.php">Refrigerators</a>
-        <a href="./electronics.php">Air Conditioners</a>
-        <a href="./electronics.php">Kitchen Appliances</a>
-    </section>
-    <section>
-        <h4><a href="./devices.php">Phones & Laptops</a></h4>
-        <a href="./devices.php">Android Phones</a>
-        <a href="./devices.php">Apple phones</a>
-        <a href="./devices.php">Apple Macbooks</a>
-        <a href="./devices.php">Windows Laptops</a>
-        <a href="./devices.php">Laptop Accessories </a>
-    </section>
-    <section>
-        <h4><a href="./food.php">Food & Beverages</a></h4>
-        <a href="./food.php">Cold Drinks</a>
-        <a href="./food.php">Meat</a>
-        <a href="./food.php">Wheat</a>
-        <a href="./food.php">Dairy Products</a>
-    </section>
-    <section>
-        <h4><a href="./sports.php">Sports & Fitness</a></h4>
-        <a href="./sports.php">Cricket</a>
-        <a href="./sports.php">Football</a>
-        <a href="./sports.php">Table Tennis</a>
-        <a href="./sports.php">Basket Ball</a>
-        <a href="./sports.php">Indoor Games</a>
-        <a href="./sports.php">Gym Equipment</a>
-    </section>
-    <section>
-        <h4><a href="./home.php">Home & Decor</a></h4>
-        <a href="./home.php">Furniture</a>
-        <a href="./home.php">Carpets</a>
-        <a href="./home.php">Lights</a>
-        <a href="./home.php">Wall Decor</a>
-        <a href="./home.php">Plants</a>
-    </section>
-    <section>
-        <h4><a href="./entertainment.php">Gaming & Entertainment</a></h4>
-        <a href="./entertainment.php">Playstation 5</a>
-        <a href="./entertainment.php">Xbox One</a>
-        <a href="./entertainment.php">Gaming Controllers</a>
-        <a href="./entertainment.php">Blu-ray Disks</a>
-        <a href="./entertainment.php">Gaming PC</a>
-        <a href="./entertainment.php">Computer Accessories</a>
-    </section>
-    <section>
-        <h4><a href="./stationary.php">Books & Stationary</a></h4>
-        <a href="./stationary.php">Novels</a>
-        <a href="./stationary.php">Motivational Books</a>
-        <a href="./stationary.php">Painting</a>
-        <a href="./stationary.php">Pen & Pencils</a>
-        <a href="./stationary.php">School Books</a>
-    </section>
 </div>
 
 <script>

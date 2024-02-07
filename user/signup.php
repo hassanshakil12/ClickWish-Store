@@ -20,21 +20,22 @@
     <div class="main">
         <form action="" method="post">
             <h1>SIGNUP</h1>
-            <input type="text" name="username" placeholder="Enter Username" required>
-            <input type="email" name="email" placeholder="Enter Email" required>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-            <input type="tel" name="phoneNo" placeholder="Enter Phone No." required>
-            <input type="text" name="location" placeholder="Enter location" required>
-            <div class="gndr">
-                <div class="male">
-                    <input type="radio" name="gender" value="Male">
-                    <p>Male</p>
-                </div>
-                <div class="female">
-                    <input type="radio" name="gender" value="Female">
-                    <p>Female</p>
-                </div>
+            <div class="userInput">
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                <input type="tel" name="phoneNo" placeholder="Enter Phone No." required>
+                <input type="text" name="location" placeholder="Enter location" required>
+            </div>
+
+            <div class="gender">
+                <input type="radio" name="gender" value="Male">
+                <p>Male</p>
+            </div>
+            <div class="gender">
+                <input type="radio" name="gender" value="Female">
+                <p>Female</p>
             </div>
 
             <select name="accountType">

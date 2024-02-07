@@ -57,6 +57,11 @@ form p{
     font-size: 20px;
 }
 
+form .others{
+    text-align: center;
+    line-height: 1.5;
+}
+
 form a{
     text-decoration: none;
     color: rgb(0, 0, 164);
