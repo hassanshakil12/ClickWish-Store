@@ -27,16 +27,16 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             <h1>My Products.</i></h1>
         </div>
         <div class="middle">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="top">
-                    <input type="text" placeholder="Enter Product Name" name="pName" required>
-                    <input type="text" placeholder="Enter Product Price" name="pPrice" required>
-                    <input type="number" placeholder="Enter Product Quantity" name="pQuantity" required>
+                    <input type="text" placeholder="Enter Product Name" name="pName">
+                    <input type="text" placeholder="Enter Product Price" name="pPrice">
+                    <input type="number" placeholder="Enter Product Quantity" name="pQuantity">
                 </div>
                 <div class="center">
-                    <input type="file" name="p_name" required>
+                    <input type="file" name="prodImage">
 
-                    <select name="category">
+                    <select name="pCategory">
                         <option selected>--Select Category--</option>
                         <option value="Clothing" name="category">Fashion & Clothing</option>
                         <option value="Electronics" name="category">Electronics & Appliances</option>
@@ -49,10 +49,34 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                     </select>
                 </div>
 
-                <input type="submit" value="Add Product" name="addProduct" class="btn" required>
+                <input type="submit" value="Add Product" name="addProduct" class="btn">
             </form>
         </div>
     </div>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
-
 </html>
+
+<?php
+if($loggedIn){
+    if(isset($_POST["addProduct"])){
+        $prodName = $_POST["pName"];
+        $prodPrice = $_POST["pPrice"];
+        $prodQty = $_POST["pQuantity"];
+
+        $filename = $_FILES["prodImage"]["name"];
+        $tmpname = $_FILES["prodImage"]["tmp_name"];
+        $path = '../Assets/Product/'.$filename;
+        move_uploaded_file($tmpname, $path);
+
+        $prodCategory = $_POST["pCategory"];
+
+        $query = "INSERT INTO product_details (name, image, price, quantity, category) VALUES ('$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory')";
+        $data = mysqli_query($conn, $query);
+    }
+}
+?>

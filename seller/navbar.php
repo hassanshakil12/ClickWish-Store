@@ -18,22 +18,7 @@
         <p>About Us</p>
     </div>
     <div class="menuLogo">
-        <?php if ($loggedIn) {
-            ?>
-
-            <a href="../cart/index.php"><i class="ri-shopping-cart-line cart"></i></a>
-
-            <?php
-        } else {
-            ?>
-
-            <a href="../user/login.php"><i class="ri-shopping-cart-line cart"></i></a>
-
-            <?php
-        }
-        ?>
         <i class="ri-menu-fill menuBtn"></i>
-
     </div>
 
     <?php
@@ -44,7 +29,6 @@
                 <?php echo $_SESSION["username"]; ?>
             </h4>
             <div class="pfp"><a href="../user/profile.php"><i class="ri-user-line"></i></a></div>
-            <div class="pfp"><a href="../cart/index.php"><i class="ri-shopping-cart-line"></i></a></div>
             <div class="logOut"><a href="../user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
@@ -87,9 +71,9 @@
 
 <div class="sideMenu">
     <div class="top">
-        <p><a href="../index.php">Home</a></p>
-        <p class="sideMenuShopBtn"><a href="#">Shop<i class="ri-arrow-down-s-fill"></i></a></p>
-        <p><a href="">Contact Us</a></p>
+        <p><a href="./index.php">Home</a></p>
+        <p class="sideMenuShopBtn"><a href="./product.php">Products</a></p>
+        <p><a href="">Contact</a></p>
         <p><a href="">About Us</a></p>
 
         <?php if ($loggedIn == true) { ?>
