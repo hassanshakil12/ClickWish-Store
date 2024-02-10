@@ -18,6 +18,12 @@ $query = "SELECT * FROM `product_details` WHERE id='$id'";
 $data = mysqli_query($conn, $query);
 
 $row = mysqli_fetch_array($data);
+
+$sellerId = $row['seller_id'];
+
+$sellerQuery = "SELECT * FROM `seller_data` WHERE id='$sellerId'";
+$sellerData = mysqli_query($conn, $sellerQuery);
+$sellerRow = mysqli_fetch_array($sellerData);
 ?>
 <script>
     console.log("<?php echo $_SESSION['qty']; ?>");
@@ -195,7 +201,7 @@ $row = mysqli_fetch_array($data);
                         <div class="avatar">
                             <i class="ri-user-fill"></i>
                         </div>
-                        <h4>Muhammad Hassan</h4>
+                        <h4><?php echo $sellerRow['username']?></h4>
                     </div>
                 </div>
             </div>

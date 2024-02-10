@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
     header('../user/login.php');
 } else {
     $loggedIn = true;
+    $sellerId = $_SESSION['id'];
 }
 ?>
 
@@ -75,7 +76,7 @@ if($loggedIn){
 
         $prodCategory = $_POST["pCategory"];
 
-        $query = "INSERT INTO product_details (name, image, price, quantity, category) VALUES ('$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory')";
+        $query = "INSERT INTO product_details (seller_id, name, image, price, quantity, category) VALUES ('$sellerId', '$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory')";
         $data = mysqli_query($conn, $query);
     }
 }
