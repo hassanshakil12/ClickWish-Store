@@ -42,3 +42,14 @@ table tr td{
     border-radius: 5px;
     text-decoration: none;
 }
+
+.checkoutBtn{
+    padding: 0.6vh 0.8vw;
+    background-color: rgb(0, 150, 50);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}

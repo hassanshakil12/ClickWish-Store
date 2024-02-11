@@ -47,7 +47,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
         <div class="top">
             <div class="left">
                 <div class="image">
-                    <img src="../Assets/Sample.jpg" alt="Product image">
+                    <img src="../Assets/<?php echo $row['image']?>" alt="Product image">
                 </div>
             </div>
             <div class="right">
