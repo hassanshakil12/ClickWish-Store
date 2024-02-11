@@ -30,12 +30,12 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         <div class="middle">
             <form method="POST" enctype="multipart/form-data">
                 <div class="top">
-                    <input type="text" placeholder="Enter Product Name" name="pName">
-                    <input type="text" placeholder="Enter Product Price" name="pPrice">
-                    <input type="number" placeholder="Enter Product Quantity" name="pQuantity">
+                    <input type="text" placeholder="Enter Product Name" name="pName" required>
+                    <input type="text" placeholder="Enter Product Price" name="pPrice" required>
+                    <input type="number" placeholder="Enter Product Quantity" name="pQuantity" required>
                 </div>
                 <div class="center">
-                    <input type="file" name="prodImage">
+                    <input type="file" name="prodImage" required>
 
                     <select name="pCategory">
                         <option selected>--Select Category--</option>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                         <option value="Stationary" name="category">Books & Stationary</option>
                     </select>
                 </div>
-
+                <textarea name="pDesc" cols="30" rows="10" placeholder="Add Product Description" required></textarea>
                 <input type="submit" value="Add Product" name="addProduct" class="btn">
             </form>
         </div>
@@ -75,8 +75,9 @@ if($loggedIn){
         move_uploaded_file($tmpname, $path);
 
         $prodCategory = $_POST["pCategory"];
+        $prodDesc = $_POST["pDesc"];
 
-        $query = "INSERT INTO product_details (seller_id, name, image, price, quantity, category) VALUES ('$sellerId', '$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory')";
+        $query = "INSERT INTO product_details (seller_id, name, image, price, quantity, category, description) VALUES ('$sellerId', '$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory', '$prodDesc')";
         $data = mysqli_query($conn, $query);
     }
 }

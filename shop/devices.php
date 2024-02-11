@@ -32,7 +32,9 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             ?>
                     <a href="./page.php? ID=<?php echo "$row[id]" ?>">
                     <div class="product">
-                        <div class="top"></div>
+                        <div class="top">
+                            <img src="<?php echo $row['image']?>">
+                        </div>
                         <div class="bottom">
                             <h1><?php echo "$row[name]" ?></h1>
                             <div class="bottomBottom">

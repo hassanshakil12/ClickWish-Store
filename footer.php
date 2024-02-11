@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="bottom">
-        <h4>&copy; 2023 Copyright Muhammad Al Hassan(hazaptix007) | <a
+        <h4>&copy; 2024 Copyright Muhammad Al Hassan(hazaptix007) | <a
                 href="https://hassanshakil12.github.io/cyberstore.com/" target="_blank">www.fazlerabbi.com</a> |
             E-Commerce Store</h4>
     </div>

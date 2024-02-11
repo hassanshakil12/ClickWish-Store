@@ -332,18 +332,31 @@
 .product .top2 {
     background-color: rgb(64, 84, 84);
     width: 100%;
-    height: 70%;
+    height: 75%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.product .bottom2 {
-    background-color: rgb(255, 228, 209);
+.product .top2 img{
     width: 100%;
-    height: 30%;
+    object-fit: fill;
+  }
+
+.product .bottom2 {
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    height: 25%;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.product .bottom2 h1, .product .bottom2 p, .product .bottom2 a, .product .bottom2 i{
+    color: white;
+  }
 
 .product .bottom2 .bottomBottom2 {
     width: 100%;

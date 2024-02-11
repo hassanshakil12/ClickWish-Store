@@ -196,7 +196,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
                 }
                 ?>
                 <div class="sellerInfo">
-                    <h4>Seller:</h4>
+                    <h4>Product by:</h4>
                     <div class="profile">
                         <div class="avatar">
                             <i class="ri-user-fill"></i>
@@ -209,23 +209,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
         <div class="bottom">
             <div class="description">
                 <h4>Description.</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Cupiditate, itaque! A est, amet autem fugiat ab asperiores
-                    esse nisi. Eum, corporis ipsam nobis rem minima asperiores
-                    aspernatur ex, ea provident sequi consectetur repellendus
-                    reprehenderit voluptatem exercitationem quo. Beatae, minima
-                    dolores? Tempora minus quas ipsum cumque velit amet sunt
-                    reiciendis non! Lorem ipsum dolor sit amet, consectetur.
-                    Cupiditate, itaque! A est, amet autem fugiat ab asperiores
-                    esse nisi. Eum, corporis ipsam nobis rem minima asperiores
-                    aspernatur ex, ea provident sequi consectetur repellendus
-                    reprehenderit voluptatem exercitationem quo. Beatae, minima
-                    dolores? Tempora minus quas ipsum cumque velit amet sunt
-                    reiciendis non! Eum, corporis ipsam nobis rem minima asperiores
-                    aspernatur ex, ea provident sequi consectetur repellendus
-                    reprehenderit voluptatem exercitationem quo. Beatae, minima
-                    dolores? Tempora minus quas ipsum cumque velit amet sunt
-                    reiciendis non!</p>
+                <p><?php echo $row['description']?></p>
             </div>
             <div class="buyerFeedback">
                 <h4>Comments.</h4>
@@ -272,7 +256,9 @@ $sellerRow = mysqli_fetch_array($sellerData);
                     ?>
                     <a href="./page.php? ID=<?php echo "$row[id]" ?>">
                     <div class="product">
-                        <div class="top2"></div>
+                        <div class="top2">
+                            <img src="<?php echo $row['image']?>">
+                        </div>
                         <div class="bottom2">
                             <h1><?php echo "$row[name]" ?></h1>
                             <div class="bottomBottom2">

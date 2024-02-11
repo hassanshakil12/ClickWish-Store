@@ -14,7 +14,7 @@
     <div class="center">
         <p><a href="./index.php">Home</a></p>
         <p class="shopBtn"><a href="./product.php">Products</a></p>
-        <p>Contact</p>
+        <p>Orders</p>
         <p>About Us</p>
     </div>
     <div class="menuLogo">
@@ -47,37 +47,15 @@
 
 </div>
 
-<script>
-    let shopBtn = document.querySelector('.navbar .shopBtn');
-    let dropdown = document.querySelector('.dropdown');
-    let count = 0;
-
-    shopBtn.addEventListener('mouseover', function () {
-        if (count == 0) {
-            count++;
-            dropdown.style.zIndex = 9;
-            dropdown.style.opacity = 1;
-        }
-    })
-
-    dropdown.addEventListener('mouseleave', function () {
-        if (count > 0) {
-            count = 0;
-            dropdown.style.zIndex = -1;
-            dropdown.style.opacity = 0;
-        }
-    })
-</script>
-
 <div class="sideMenu">
     <div class="top">
         <p><a href="./index.php">Home</a></p>
-        <p class="sideMenuShopBtn"><a href="./product.php">Products</a></p>
-        <p><a href="">Contact</a></p>
+        <p><a href="./product.php">Products</a></p>
+        <p><a href="">Orders</a></p>
         <p><a href="">About Us</a></p>
 
         <?php if ($loggedIn == true) { ?>
-            <p class="pfp"><a href="../user/profile.php">
+            <p class="pfp"><a href="#">
                     <?php echo $_SESSION["username"]; ?> <i class="ri-user-line"></i>
                 </a></p>
         <?php } ?>
@@ -101,18 +79,6 @@
         }
         ?>
     </div>
-</div>
-
-<div class="sideMenuShop">
-    <i class="ri-arrow-left-line close"></i>
-    <a href="./fashion.php">Fashion & Clothing</a>
-    <a href="./electronics.php">Electronics & Appliances</a>
-    <a href="./devices.php">Phones & Laptops</a>
-    <a href="./food.php">Food & Beverages</a>
-    <a href="./sports.php">Sports & Fitness</a>
-    <a href="./home.php">Home & Decor</a>
-    <a href="./entertainment.php">Gaming & Entertainment</a>
-    <a href="./stationary.php">Books & Stationary</a>
 </div>
 
 <script>
@@ -144,36 +110,5 @@
         })
     }
 
-    const sideMenuShop = () => {
-        let sideMenuShopBtn = document.querySelector('.sideMenuShopBtn');
-        let sideMenuShop = document.querySelector('.sideMenuShop');
-        let sideMenu =document.querySelector('.sideMenu')
-        let close = document.querySelector('.close')
-
-        sideMenuShopBtn.addEventListener('click', function () {
-            if (num == 0) {
-                num = 1;
-                click = 0;
-                console.log('hello');
-                sideMenuShop.style.zIndex = 9;
-                sideMenuShop.style.opacity = 1;
-                sideMenu.style.zIndex = -1;
-                sideMenu.style.opacity = 0;
-            }
-        })
-
-        close.addEventListener('click', function(){
-            if(num > 0){
-                num = 0;
-                click = 1;
-                sideMenuShop.style.zIndex = -1;
-                sideMenuShop.style.opacity = 0;
-                sideMenu.style.zIndex = 9;
-                sideMenu.style.opacity = 1;
-            }
-        })
-    }
-
-    sideMenuShop();
     responsiveSideMenu();
 </script>
