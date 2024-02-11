@@ -24,10 +24,12 @@
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 0 1.5vw 1.5vw 1.5vw;
+  padding: 2vw 2vw ;
   background-color: crimson;
+  gap: 20px;
+  flex-basis: 25%;
 }
 
 .product {
@@ -38,7 +40,6 @@
   cursor: pointer;
   overflow: hidden;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
-  margin-top: 1.5vw;
 }
 
 .product a{

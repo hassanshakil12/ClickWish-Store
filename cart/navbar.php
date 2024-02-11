@@ -1,10 +1,8 @@
-<?php include("./connection.php");?>
+<?php include("./connection.php"); ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="./css/navbar.css">
@@ -21,17 +19,17 @@
     </div>
     <div class="menuLogo">
         <?php if ($loggedIn) {
-            ?>
+        ?>
 
             <a href="./index.php"><i class="ri-shopping-cart-line cart"></i></a>
 
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
 
             <a href="../user/login.php"><i class="ri-shopping-cart-line cart"></i></a>
 
-            <?php
+        <?php
         }
         ?>
         <i class="ri-menu-fill menuBtn"></i>
@@ -39,11 +37,34 @@
     </div>
     <div class="right">
         <?php
+        $userId = $_SESSION['id'];
+        $itemCountQuery = "SELECT COUNT(id) AS count FROM cart_details WHERE user_id = '$userId'";
+        $itemCountData = mysqli_query($conn, $itemCountQuery);
+
+        $count = mysqli_fetch_array($itemCountData);
         if ($loggedIn) {
         ?>
             <h4><?php echo $_SESSION["username"]; ?></h4>
             <div class="pfp"><a href="../user/profile.php"><i class="ri-user-line"></i></a></div>
-            <div class="pfp"><a href="./index.php"><i class="ri-shopping-cart-line"></i></a></div>
+            <div class="cartBtn">
+                <?php
+                if ($count['count'] > 0) {
+                ?>
+                    <div class="add">
+                        <h2><?php if ($count['count'] > 9) {
+                                echo '9+';
+                            } else {
+                                echo $count['count'];
+                            }
+                            ?></h2>
+                    </div>
+                <?php
+                }
+                ?>
+                <a href="./index.php">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
             <div class="logOut"><a href="../user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a></div>
         <?php
         } else {
@@ -128,7 +149,7 @@
     let dropdown = document.querySelector('.dropdown');
     let count = 0;
 
-    shopBtn.addEventListener('mouseover', function () {
+    shopBtn.addEventListener('mouseover', function() {
         if (count == 0) {
             count++;
             dropdown.style.zIndex = 9;
@@ -136,7 +157,7 @@
         }
     })
 
-    dropdown.addEventListener('mouseleave', function () {
+    dropdown.addEventListener('mouseleave', function() {
         if (count > 0) {
             count = 0;
             dropdown.style.zIndex = -1;
@@ -162,18 +183,18 @@
     <div class="bottom">
         <?php
         if ($loggedIn == true) {
-            ?>
+        ?>
 
             <p class="logOutBtn"><a href="../user/logout.php">Sign Out</a></p>
 
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
 
             <p class="logInBtn"><a href="../user/login.php">Log In</a></p>
             <p class="signUpBtn"><a href="../user/signup.php">Sign Up</a></p>
 
-            <?php
+        <?php
         }
         ?>
     </div>
@@ -199,20 +220,18 @@
         var sideMenu = document.querySelector('.sideMenu');
         let sideMenuShop = document.querySelector('.sideMenuShop');
 
-        menuBtn.addEventListener('click', function () {
-            if(num > 0){
+        menuBtn.addEventListener('click', function() {
+            if (num > 0) {
                 num = 0;
                 sideMenuShop.style.zIndex = -1;
                 sideMenuShop.style.opacity = 0;
-            }
-            else if (click == 0) {
-                click=1;
+            } else if (click == 0) {
+                click = 1;
                 sideMenu.style.display = 'block';
                 sideMenu.style.opacity = 1;
                 sideMenu.style.zIndex = 9;
-            }
-            else {
-                click=0;
+            } else {
+                click = 0;
                 sideMenu.style.display = 'none';
                 sideMenu.style.opacity = 0;
                 sideMenu.style.zIndex = -1;
@@ -223,10 +242,10 @@
     const sideMenuShop = () => {
         let sideMenuShopBtn = document.querySelector('.sideMenuShopBtn');
         let sideMenuShop = document.querySelector('.sideMenuShop');
-        let sideMenu =document.querySelector('.sideMenu')
+        let sideMenu = document.querySelector('.sideMenu')
         let close = document.querySelector('.close')
 
-        sideMenuShopBtn.addEventListener('click', function () {
+        sideMenuShopBtn.addEventListener('click', function() {
             if (num == 0) {
                 num = 1;
                 click = 0;
@@ -238,8 +257,8 @@
             }
         })
 
-        close.addEventListener('click', function(){
-            if(num > 0){
+        close.addEventListener('click', function() {
+            if (num > 0) {
                 num = 0;
                 click = 1;
                 sideMenuShop.style.zIndex = -1;

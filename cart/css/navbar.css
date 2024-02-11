@@ -113,6 +113,32 @@
   justify-content: center;
   font-size: 35px;
   cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.navbar .right .cartBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.navbar .right .cartBtn .add{
+  position: absolute;
+  top: -5;
+  right: -7;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: greenyellow;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar .right .logOut{

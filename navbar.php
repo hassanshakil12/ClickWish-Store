@@ -46,30 +46,46 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
 
     </div>
 
-    <?php
-    if ($loggedIn == true) {
-        ?>
-        <div class="right">
-            <h4>
-                <?php echo $_SESSION["username"]; ?>
-            </h4>
-            <div class="pfp"><a href="./user/profile.php"><i class="ri-user-line"></i></a></div>
-            <div class="pfp"><a href="./cart/index.php"><i class="ri-shopping-cart-line"></i></a></div>
-            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
-            </div>
-        </div>
-
+    <div class="right">
         <?php
-    } else {
+        $userId = $_SESSION['id'];
+        $itemCountQuery = "SELECT COUNT(id) AS count FROM cart_details WHERE user_id = '$userId'";
+        $itemCountData = mysqli_query($conn, $itemCountQuery);
+
+        $count = mysqli_fetch_array($itemCountData);
+        if ($loggedIn) {
         ?>
-        <div class="right">
+            <h4><?php echo $_SESSION["username"]; ?></h4>
+            <div class="pfp"><a href="./user/profile.php"><i class="ri-user-line"></i></a></div>
+            <div class="cartBtn">
+                <?php
+                if ($count['count'] > 0) {
+                ?>
+                    <div class="add">
+                        <h2><?php if ($count['count'] > 9) {
+                                echo '9+';
+                            } else {
+                                echo $count['count'];
+                            }
+                            ?></h2>
+                    </div>
+                <?php
+                }
+                ?>
+                <a href="./cart/index.php">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
+            <div class="logOut"><a href="./user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a></div>
+        <?php
+        } else {
+        ?>
             <p class="logInBtn"><a href="./user/login.php">Log In</a></p>
             <p class="signUpBtn"><a href="./user/signup.php">Sign Up</a></p>
-        </div>
-
         <?php
-    }
-    ?>
+        }
+        ?>
+    </div>
 
 </div>
 
