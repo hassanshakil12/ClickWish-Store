@@ -37,12 +37,12 @@
     </div>
     <div class="right">
         <?php
-        $userId = $_SESSION['id'];
-        $itemCountQuery = "SELECT COUNT(id) AS count FROM cart_details WHERE user_id = '$userId'";
-        $itemCountData = mysqli_query($conn, $itemCountQuery);
-
-        $count = mysqli_fetch_array($itemCountData);
         if ($loggedIn) {
+            $userId = $_SESSION['id'];
+            $itemCountQuery = "SELECT COUNT(id) AS count FROM cart_details WHERE user_id = '$userId'";
+            $itemCountData = mysqli_query($conn, $itemCountQuery);
+
+            $count = mysqli_fetch_array($itemCountData);
         ?>
             <h4><?php echo $_SESSION["username"]; ?></h4>
             <div class="pfp"><a href="../user/profile.php"><i class="ri-user-line"></i></a></div>
