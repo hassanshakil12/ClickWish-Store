@@ -14,8 +14,8 @@
     <div class="center">
         <p><a href="./index.php">Home</a></p>
         <p class="shopBtn"><a href="./product.php">Products</a></p>
+        <p>Items</p>
         <p>Orders</p>
-        <p>About Us</p>
     </div>
     <div class="menuLogo">
         <i class="ri-menu-fill menuBtn"></i>
@@ -23,7 +23,7 @@
 
     <?php
     if ($loggedIn == true) {
-        ?>
+    ?>
         <div class="right">
             <h4>
                 <?php echo $_SESSION["username"]; ?>
@@ -33,15 +33,15 @@
             </div>
         </div>
 
-        <?php
+    <?php
     } else {
-        ?>
+    ?>
         <div class="right">
             <p class="logInBtn"><a href="../user/login.php">Log In</a></p>
             <p class="signUpBtn"><a href="../user/signup.php">Sign Up</a></p>
         </div>
 
-        <?php
+    <?php
     }
     ?>
 
@@ -51,8 +51,8 @@
     <div class="top">
         <p><a href="./index.php">Home</a></p>
         <p><a href="./product.php">Products</a></p>
+        <p><a href="">Items</a></p>
         <p><a href="">Orders</a></p>
-        <p><a href="">About Us</a></p>
 
         <?php if ($loggedIn == true) { ?>
             <p class="pfp"><a href="#">
@@ -64,18 +64,18 @@
     <div class="bottom">
         <?php
         if ($loggedIn == true) {
-            ?>
+        ?>
 
             <p class="logOutBtn"><a href="../user/logout.php">Sign Out</a></p>
 
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
 
             <p class="logInBtn"><a href="../user/login.php">Log In</a></p>
             <p class="signUpBtn"><a href="../user/signup.php">Sign Up</a></p>
 
-            <?php
+        <?php
         }
         ?>
     </div>
@@ -89,20 +89,18 @@
         var sideMenu = document.querySelector('.sideMenu');
         let sideMenuShop = document.querySelector('.sideMenuShop');
 
-        menuBtn.addEventListener('click', function () {
-            if(num > 0){
+        menuBtn.addEventListener('click', function() {
+            if (num > 0) {
                 num = 0;
                 sideMenuShop.style.zIndex = -1;
                 sideMenuShop.style.opacity = 0;
-            }
-            else if (click == 0) {
-                click=1;
+            } else if (click == 0) {
+                click = 1;
                 sideMenu.style.display = 'block';
                 sideMenu.style.opacity = 1;
                 sideMenu.style.zIndex = 9;
-            }
-            else {
-                click=0;
+            } else {
+                click = 0;
                 sideMenu.style.display = 'none';
                 sideMenu.style.opacity = 0;
                 sideMenu.style.zIndex = -1;

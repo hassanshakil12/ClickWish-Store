@@ -26,7 +26,9 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
             <h1>Welcome! <i>"<?php echo $_SESSION['username']?>"</i></h1>
         </div>
         <div class="middle">
-
+            <div class="items">
+                
+            </div>
         </div>
         <div class="bottom">
 

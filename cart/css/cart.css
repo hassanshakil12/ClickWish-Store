@@ -2,8 +2,10 @@
     width: 100vw;
     min-height: 100vh;
     padding-top: 13vh;
+    padding-bottom: 40px;
     background-color: black;
     color: white;
+    /* margin-bottom: 40px; */
 }
 
 .main h1{

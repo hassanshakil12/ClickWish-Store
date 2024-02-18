@@ -1,19 +1,27 @@
-.main{
+.main {
     padding-top: 9vh;
 }
 
-.top{
+.top {
     width: 100vw;
     padding: 2vw;
 }
 
-.top h1{
+.top h1 {
     font-size: 70px;
     color: grey;
     font-weight: 400;
 }
 
-.middle{
+/* ------------- Middle ------------- */
+
+.middle {
     width: 100vw;
     background-color: aqua;
+}
+
+.middle .items {
+    width: 100vw;
+    height: 70vh;
+    background-color: rgb(124, 0, 101);
 }

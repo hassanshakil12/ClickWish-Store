@@ -43,7 +43,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                                     <?php 
                                     if ($loggedIn) { 
                                     ?>
-                                        <a href="../cart/insertCart.php? ID=<?php echo "$row[id]" ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
+                                        <a href="../cart/insertCart.php? ID=<?php echo $row['id'] ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
                                     <?php 
                                     } 
                                     else { 

@@ -25,9 +25,9 @@ $sellerQuery = "SELECT * FROM `seller_data` WHERE id='$sellerId'";
 $sellerData = mysqli_query($conn, $sellerQuery);
 $sellerRow = mysqli_fetch_array($sellerData);
 ?>
-<script>
+<!-- <script>
     console.log("<?php echo $_SESSION['qty']; ?>");
-</script>
+</script> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +47,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
         <div class="top">
             <div class="left">
                 <div class="image">
-                    <img src="../Assets/<?php echo $row['image']?>" alt="Product image">
+                    <img src="../Assets/<?php echo $row['image'] ?>" alt="Product image">
                 </div>
             </div>
             <div class="right">
@@ -76,35 +76,32 @@ $sellerRow = mysqli_fetch_array($sellerData);
 
                     if (<?php echo $row['quantity']; ?> <= 0) {
                         $(".warn3").show();
-                    }
-                    else {
-                        plus.addEventListener('click', function () {
+                    } else {
+                        plus.addEventListener('click', function() {
                             if (number < <?php echo $row['quantity']; ?>) {
                                 $(".warn2").hide();
                                 number++;
                                 stock.textContent = number;
                                 <?php $qty = $qty + 1; ?>
-                            }
-                            else {
+                            } else {
                                 $(".warn1").show();
-                                setTimeout(function () {
+                                setTimeout(function() {
                                     $(".warn1").hide();
                                 }, 3000)
                             }
                         })
 
-                        minus.addEventListener('click', function () {
+                        minus.addEventListener('click', function() {
                             if (number > 1) {
                                 number--;
                                 stock.textContent = number;
-                                <?php $qty = $qty-1; ?>
-                                $(document).ready(function () {
+                                <?php $qty = $qty - 1; ?>
+                                $(document).ready(function() {
                                     $(".warn1").hide();
                                 })
-                            }
-                            else {
+                            } else {
                                 $(".warn2").show();
-                                setTimeout(function () {
+                                setTimeout(function() {
                                     $(".warn2").hide();
                                 }, 3000)
                             }
@@ -113,18 +110,17 @@ $sellerRow = mysqli_fetch_array($sellerData);
                 </script>
 
                 <div class="btn">
-                    <?php if($loggedIn){
+                    <?php if ($loggedIn) {
                     ?>
-                    <input type="submit" value="Buy Now" class="buyBtn">
-                    <a href="../cart/insertCart.php? ID='<?php echo $row['id']?>'"><input type="submit" value="Add To Cart" class="cartBtn"></a>
+                        <input type="submit" value="Buy Now" class="buyBtn">
+                        <a href="../cart/insertCart.php? ID='<?php echo $row['id'] ?>'"><input type="submit" value="Add To Cart" class="cartBtn"></a>
                     <?php
-                    }
-                    else{
+                    } else {
                     ?>
-                    <a href="../user/login.php"><input type="submit" value="Buy Now" class="buyBtn"></a>
-                    <a href="../user/login.php"><input type="submit" value="Add To Cart" class="cartBtn"></a>
+                        <a href="../user/login.php"><input type="submit" value="Buy Now" class="buyBtn"></a>
+                        <a href="../user/login.php"><input type="submit" value="Add To Cart" class="cartBtn"></a>
                     <?php
-                    }?>
+                    } ?>
                 </div>
                 <div class="stars">
                     <i class="ri-star-fill star1"></i>
@@ -138,10 +134,9 @@ $sellerRow = mysqli_fetch_array($sellerData);
 
                 <?php
                 if ($loggedIn == false) {
-                    ?>
+                ?>
 
                     <script>
-                        let starNum = 0;
                         const starArray = [
                             document.querySelector('.star1'),
                             document.querySelector('.star2'),
@@ -150,49 +145,55 @@ $sellerRow = mysqli_fetch_array($sellerData);
                             document.querySelector('.star5')
                         ];
 
+                        // if user click on the stars w/t login this will redirect him to login page...
                         starArray.forEach(star => {
-                            star.addEventListener('click', function () {
+                            star.addEventListener('click', function() {
                                 window.location.href = '../user/login.php';
                             })
                         });
                     </script>
 
-                    <?php
+                <?php
                 } else if ($loggedIn == true) {
-                    ?>
+                ?>
 
-                        <script>
-                            let feedbackNum = 0;
-                            let feedback = document.querySelector('.feedback');
+                    <script>
+                        let feedbackNum = 0;
+                        let feedback = document.querySelector('.feedback');
 
-                            starNum = 0;
-                            starArray = [
-                                document.querySelector('.star1'),
-                                document.querySelector('.star2'),
-                                document.querySelector('.star3'),
-                                document.querySelector('.star4'),
-                                document.querySelector('.star5')
-                            ];
+                        let rating = 0;
+                        starArray = [
+                            document.querySelector('.star1'),
+                            document.querySelector('.star2'),
+                            document.querySelector('.star3'),
+                            document.querySelector('.star4'),
+                            document.querySelector('.star5')
+                        ];
 
-                            for (let i = 0; i < starArray.length; i++) {
-                                starArray[i].addEventListener('click', function () {
-                                    if (starNum == 0) {
-                                        starNum = i + 1;
-                                        feedbackNum++;
-                                        console.log(starNum);
-                                        feedback.textContent = '( ' + feedbackNum + ' )';
+                        // recording the rating according to stars and assigning values to them...
+                        for (let i = 0; i < starArray.length; i++) {
+                            starArray[i].addEventListener('click', function() {
+                                if (rating == 0) {
+                                    rating = i + 1;
+                                    feedbackNum++;
+                                    console.log(rating)
+                                    feedback.textContent = '( ' + feedbackNum + ' )';
+
+                                    // changing the colors of assigned rating...
+                                    for (let i = 0; i < rating; i++) {
+                                        starArray[i].style.color = "yellow"
                                     }
-                                    else {
-                                        $('.warn4').show();
-                                        setTimeout(() => {
-                                            $('.warn4').hide();
-                                        }, 3000);
-                                    }
-                                });
-                            }
-                        </script>
+                                } else {
+                                    $('.warn4').show();
+                                    setTimeout(() => {
+                                        $('.warn4').hide();
+                                    }, 3000);
+                                }
+                            });
+                        }
+                    </script>
 
-                    <?php
+                <?php
                 }
                 ?>
                 <div class="sellerInfo">
@@ -201,7 +202,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
                         <div class="avatar">
                             <i class="ri-user-fill"></i>
                         </div>
-                        <h4><?php echo $sellerRow['username']?></h4>
+                        <h4><?php echo $sellerRow['username'] ?></h4>
                     </div>
                 </div>
             </div>
@@ -209,7 +210,7 @@ $sellerRow = mysqli_fetch_array($sellerData);
         <div class="bottom">
             <div class="description">
                 <h4>Description.</h4>
-                <p><?php echo $row['description']?></p>
+                <p><?php echo $row['description'] ?></p>
             </div>
             <div class="buyerFeedback">
                 <h4>Comments.</h4>
@@ -254,28 +255,27 @@ $sellerRow = mysqli_fetch_array($sellerData);
 
                     while ($row = mysqli_fetch_array($data)) {
                     ?>
-                    <a href="./page.php? ID=<?php echo "$row[id]" ?>">
-                    <div class="product">
-                        <div class="top2">
-                            <img src="<?php echo $row['image']?>">
-                        </div>
-                        <div class="bottom2">
-                            <h1><?php echo "$row[name]" ?></h1>
-                            <div class="bottomBottom2">
-                                <p><?php echo "$row[price]" ?>Rs</p>
-                                <div class="right">
-                                    <?php if ($loggedIn) {?>
-                                        <a href="../cart/insertCart.php? ID=<?php echo "$row[id]" ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
-                                    <?php } 
-                                    else { ?>
-                                        <a href="../user/login.php" class="right"><i class="ri-shopping-cart-line"></i></a>
-                                    <?php } ?>
-                                    <a href="#"><i class="ri-heart-line"></i></a>
+                        <a href="./page.php? ID=<?php echo "$row[id]" ?>">
+                            <div class="product">
+                                <div class="top2">
+                                    <img src="<?php echo $row['image'] ?>">
+                                </div>
+                                <div class="bottom2">
+                                    <h1><?php echo "$row[name]" ?></h1>
+                                    <div class="bottomBottom2">
+                                        <p><?php echo "$row[price]" ?>Rs</p>
+                                        <div class="right">
+                                            <?php if ($loggedIn) { ?>
+                                                <a href="../cart/insertCart.php? ID=<?php echo "$row[id]" ?>" class="right"><i class="ri-shopping-cart-line"></i></a>
+                                            <?php } else { ?>
+                                                <a href="../user/login.php" class="right"><i class="ri-shopping-cart-line"></i></a>
+                                            <?php } ?>
+                                            <a href="#"><i class="ri-heart-line"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    </a>
+                        </a>
                     <?php
                     }
                     ?>
