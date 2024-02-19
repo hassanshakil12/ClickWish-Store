@@ -215,32 +215,36 @@ $sellerRow = mysqli_fetch_array($sellerData);
             <div class="buyerFeedback">
                 <h4>Comments.</h4>
                 <div class="comments">
-                    <div class="comment">
-                        <h6>hassanshakil12: </h6>
-                        <p>It's a Very good product with fast and quick delivery time...</p>
-                    </div>
-                    <div class="comment">
-                        <h6>shayanYarKhan22: </h6>
-                        <p>Best product and proce is also good as compare to other stores.</p>
-                    </div>
-                    <div class="comment">
-                        <h6>hassanshakil12: </h6>
-                        <p>It's a Very good product with fast and quick delivery time...</p>
-                    </div>
-                    <div class="comment">
-                        <h6>shayanYarKhan22: </h6>
-                        <p>Best product and proce is also good as compare to other stores.</p>
-                    </div>
-                    <div class="comment">
-                        <h6>hassanshakil12: </h6>
-                        <p>It's a Very good product with fast and quick delivery time...</p>
-                    </div>
-                    <div class="comment">
-                        <h6>shayanYarKhan22: </h6>
-                        <p>Best product and proce is also good as compare to other stores.</p>
-                    </div>
+                    <?php
+                    $cmtDisplayQuery = "SELECT * FROM comment_details WHERE product_id = '$id'";
+                    $cmtDisplayData = mysqli_query($conn, $cmtDisplayQuery);
 
-                    <form method="post">
+                    while ($cmtRow = mysqli_fetch_array($cmtDisplayData)) {
+                        $nameQuery = "SELECT * FROM user_data WHERE id = '$cmtRow[user_id]'";
+                        $nameData = mysqli_query($conn, $nameQuery);
+                        $nameRow = mysqli_fetch_array($nameData);
+                    ?>
+                        <div class="comment">
+                            <h6><?php echo $nameRow['username'] ?></h6>
+                            <p><?php echo $cmtRow['comment'] ?></p>
+                        </div>
+                    <?php
+                    }
+                    if(isset($_POST["commentBtn"])) {
+                        if($loggedIn) {
+                            $comment = $_POST["comment"];
+                            
+                            $cmtQuery = "SELECT * FROM comment_details WHERE user_id='$_SESSION[id]' AND product_id='$id'";
+                            $cmtData = mysqli_query($conn, $cmtQuery);
+                            if(mysqli_num_rows($cmtData) == 0) {
+                                $cmtQuery = "INSERT INTO `comment_details`(`user_id`, `product_id`, `comment`) VALUES ('$_SESSION[id]','$id','$comment')";
+                                $cmtData = mysqli_query($conn, $cmtQuery);
+                            }
+                        }
+                    }
+                    ?>
+
+                    <form method="POST">
                         <input type="text" name="comment" class="userCmt" placeholder="Add a Comment">
                         <input type="submit" value="Send" class="cmtBtn" name="commentBtn">
                     </form>
