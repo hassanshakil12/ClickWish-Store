@@ -28,7 +28,7 @@
             <h4>
                 <?php echo $_SESSION["username"]; ?>
             </h4>
-            <div class="pfp"><a href="../user/profile.php"><i class="ri-user-line"></i></a></div>
+            <div class="pfp"><a href="./profile.php"><i class="ri-user-line"></i></a></div>
             <div class="logOut"><a href="../user/logout.php"><i class="ri-shut-down-line" style="color: crimson;"></i></a>
             </div>
         </div>
@@ -55,7 +55,7 @@
         <p><a href="">Orders</a></p>
 
         <?php if ($loggedIn == true) { ?>
-            <p class="pfp"><a href="#">
+            <p class="pfp"><a href="./profile.php">
                     <?php echo $_SESSION["username"]; ?> <i class="ri-user-line"></i>
                 </a></p>
         <?php } ?>

@@ -43,12 +43,12 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
                         </thead>
                         <tbody>
                             <?php
-                            $query = "SELECT * FROM product_details WHERE seller_id='$_SESSION[id]'";
+                            $query = "SELECT * FROM product_details WHERE seller_id='$_SESSION[id]' ORDER BY id DESC LIMIT 2";
                             $data = mysqli_query($conn, $query);
                             while ($row = mysqli_fetch_array($data)) {
                             ?>
                                 <tr>
-                                    <td><img src="<?php echo $row['image'] ?>" alt="Image"></td>
+                                    <td class="image"><img src="<?php echo $row['image'] ?>" alt="Image"></td>
                                     <td><?php echo $row['id'] ?></td>
                                     <td><?php echo $row['name'] ?></td>
                                     <td><?php echo $row['price'] ?></td>

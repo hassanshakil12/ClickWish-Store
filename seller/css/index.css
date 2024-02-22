@@ -41,6 +41,15 @@ table thead th {
     padding: 0.2vh 0.5vw;
 }
 
+table tr:hover {
+    background-color: rgba(128, 128, 128, 0.15);
+    cursor: pointer;
+}
+
+table tr .image{
+    padding: 10px;
+}
+
 table tr td {
     padding: 1vh 0vw;
 }
