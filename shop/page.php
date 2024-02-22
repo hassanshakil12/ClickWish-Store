@@ -156,7 +156,6 @@ $sellerRow = mysqli_fetch_array($sellerData);
                 <?php
                 } else if ($loggedIn == true) {
                 ?>
-
                     <script>
                         let feedbackNum = 0;
                         let feedback = document.querySelector('.feedback');
@@ -170,10 +169,18 @@ $sellerRow = mysqli_fetch_array($sellerData);
                             document.querySelector('.star5')
                         ];
 
-                        // recording the rating according to stars and assigning values to them...
+                        // Record the rating according to stars and assigns values to them...
                         for (let i = 0; i < starArray.length; i++) {
                             starArray[i].addEventListener('click', function() {
-                                if (rating == 0) {
+                                <?php
+                                // $query = "SELECT * FROM rating_details WHERE user_id='$_SESSION[id]' AND product_id='$id'";
+                                // $data = mysqli_query($conn, $query);
+
+                                if (mysqli_num_rows($data) == 0) {
+                                    // $query = "SELECT COUNT(rating) AS total_rating FROM rating_details WHERE product_id='$id'";
+                                    // $data = mysqli_query($conn, $query);
+                                    // $row = mysqli_fetch_array($data);
+                                ?>
                                     rating = i + 1;
                                     feedbackNum++;
                                     console.log(rating)
@@ -183,16 +190,21 @@ $sellerRow = mysqli_fetch_array($sellerData);
                                     for (let i = 0; i < rating; i++) {
                                         starArray[i].style.color = "yellow"
                                     }
+                                <?php
+                                    $query = "INSERT INTO rating_details(user_id, product_id, rating) VALUES ('$_SESSION[id]', '$id', '$id')";
+                                    $data = mysqli_query($conn, $query);
                                 } else {
+                                ?>
                                     $('.warn4').show();
                                     setTimeout(() => {
                                         $('.warn4').hide();
                                     }, 3000);
+                                <?php
                                 }
+                                ?>
                             });
                         }
                     </script>
-
                 <?php
                 }
                 ?>
@@ -216,7 +228,8 @@ $sellerRow = mysqli_fetch_array($sellerData);
                 <h4>Comments.</h4>
                 <div class="comments">
                     <?php
-                    $cmtDisplayQuery = "SELECT * FROM comment_details WHERE product_id = '$id'";
+                    // Fetch & display any 5 comments with username in random order...
+                    $cmtDisplayQuery = "SELECT * FROM comment_details WHERE product_id = '$id' ORDER BY RAND() LIMIT 5";
                     $cmtDisplayData = mysqli_query($conn, $cmtDisplayQuery);
 
                     while ($cmtRow = mysqli_fetch_array($cmtDisplayData)) {
@@ -230,13 +243,14 @@ $sellerRow = mysqli_fetch_array($sellerData);
                         </div>
                     <?php
                     }
-                    if(isset($_POST["commentBtn"])) {
-                        if($loggedIn) {
+                    // Submit and record the comment in "comment_details" table...
+                    if (isset($_POST["commentBtn"])) {
+                        if ($loggedIn) {
                             $comment = $_POST["comment"];
-                            
+
                             $cmtQuery = "SELECT * FROM comment_details WHERE user_id='$_SESSION[id]' AND product_id='$id'";
                             $cmtData = mysqli_query($conn, $cmtQuery);
-                            if(mysqli_num_rows($cmtData) == 0) {
+                            if (mysqli_num_rows($cmtData) == 0) {
                                 $cmtQuery = "INSERT INTO `comment_details`(`user_id`, `product_id`, `comment`) VALUES ('$_SESSION[id]','$id','$comment')";
                                 $cmtData = mysqli_query($conn, $cmtQuery);
                             }

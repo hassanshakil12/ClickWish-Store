@@ -17,11 +17,60 @@
 
 .middle {
     width: 100vw;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .middle .items {
     width: 100vw;
-    height: 70vh;
-    background-color: rgb(124, 0, 101);
+    min-height: 70vh;
+    /* background-color: rgb(124, 0, 101); */
+    padding: 0 2vw;
+}
+
+.middle .items table {
+    background-color: white;
+    width: 96vw;
+    table-layout: fixed;
+    font-size: 20px;
+    padding: 0.5vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+table thead th {
+    padding: 0.2vh 0.5vw;
+}
+
+table tr td {
+    padding: 1vh 0vw;
+}
+
+table tr td img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    border-radius: 5px;
+}
+
+.deleteBtn {
+    padding: 0.6vh 0.8vw;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.updateBtn {
+    padding: 0.6vh 0.8vw;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
 }

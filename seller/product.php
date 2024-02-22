@@ -60,25 +60,26 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
         }
     </script>
 </body>
+
 </html>
 
 <?php
-if($loggedIn){
-    if(isset($_POST["addProduct"])){
+if ($loggedIn) {
+    if (isset($_POST["addProduct"])) {
         $prodName = $_POST["pName"];
         $prodPrice = $_POST["pPrice"];
         $prodQty = $_POST["pQuantity"];
 
         $filename = $_FILES["prodImage"]["name"];
         $tmpname = $_FILES["prodImage"]["tmp_name"];
-        $path = '../Assets/Product/'.$filename;
+        $path = '../Assets/Product/' . $filename;
         move_uploaded_file($tmpname, $path);
 
         $prodCategory = $_POST["pCategory"];
         $prodDesc = $_POST["pDesc"];
 
         $query = "INSERT INTO product_details (seller_id, name, image, price, quantity, category, description) VALUES ('$sellerId', '$prodName', '$path', '$prodPrice', '$prodQty', '$prodCategory', '$prodDesc')";
-        $data = mysqli_query($conn, $query);
+        mysqli_query($conn, $query);
     }
 }
 ?>
